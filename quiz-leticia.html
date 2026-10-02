@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Quiz para Letícia</title>
+<style>
+  :root {
+    --azul: #1a365d;
+    --azul2: #2b6cb0;
+    --azul-claro: #ebf8ff;
+    --verde: #276749;
+    --verde-claro: #c6f6d5;
+    --vermelho: #c53030;
+    --vermelho-claro: #fed7d7;
+    --cinza: #4a5568;
+    --fundo: #f7fafc;
+    --branco: #ffffff;
+    --sombra: 0 4px 14px rgba(0,0,0,0.09);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* Impede seleção / cópia de texto (anti-cola no GPT) */
+  body, .card, .question-text, .option, .option-text, .explanation, .result-item {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(160deg, #edf2f7 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    color: #1a202c;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 16px 14px 50px;
+  }
+
+  header {
+    background: var(--azul);
+    color: white;
+    padding: 24px 18px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: var(--sombra);
+  }
+  header h1 { font-size: 1.55rem; margin-bottom: 4px; letter-spacing: -0.3px; }
+  header p { opacity: 0.8; font-size: 0.9rem; }
+
+  .card {
+    background: var(--branco);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: var(--sombra);
+  }
+
+  .progress-bar {
+    height: 7px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--azul2), #4299e1);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  .progress-text {
+    font-size: 0.82rem;
+    color: var(--cinza);
+    text-align: right;
+    margin-bottom: 14px;
+  }
+
+  .question-num {
+    display: inline-block;
+    background: var(--azul-claro);
+    color: var(--azul);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .question-text {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #1a202c;
+  }
+
+  .option {
+    display: flex;
+    flex-direction: column;
+    padding: 13px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.18s;
+    background: #fff;
+  }
+  .option:hover:not(.disabled):not(.answered) {
+    border-color: var(--azul2);
+    background: var(--azul-claro);
+  }
+  .option.selected { border-color: var(--azul2); background: var(--azul-claro); }
+  .option.correct { border-color: var(--verde); background: var(--verde-claro); }
+  .option.wrong { border-color: var(--vermelho); background: var(--vermelho-claro); }
+  .option.disabled, .option.answered { cursor: default; }
+
+  .option-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+  }
+  .option-letter {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #edf2f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--cinza);
+  }
+  .option.selected .option-letter { background: var(--azul2); color: white; }
+  .option.correct .option-letter { background: var(--verde); color: white; }
+  .option.wrong .option-letter { background: var(--vermelho); color: white; }
+
+  .option-text { flex: 1; padding-top: 2px; font-size: 0.93rem; }
+
+  .option-feedback {
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 0.84rem;
+    display: none;
+    line-height: 1.4;
+  }
+  .option-feedback.show { display: block; }
+  .option-feedback.fb-correct {
+    background: rgba(39,103,73,0.12);
+    color: #1a4731;
+    border-left: 3px solid var(--verde);
+  }
+  .option-feedback.fb-wrong {
+    background: rgba(197,48,48,0.1);
+    color: #742a2a;
+    border-left: 3px solid var(--vermelho);
+  }
+  .fb-label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--azul); color: white; }
+  .btn-primary:hover { background: #2c5282; }
+  .btn-primary:disabled { background: #a0aec0; cursor: not-allowed; }
+  .btn-secondary { background: #edf2f7; color: var(--azul); }
+  .btn-secondary:hover { background: #e2e8f0; }
+  .btn-danger { background: var(--vermelho); color: white; }
+  .btn-success { background: var(--verde); color: white; }
+
+  .btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+
+  .score-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-weight: 700;
+    border: 7px solid;
+  }
+  .score-circle .num { font-size: 2.2rem; line-height: 1; }
+  .score-circle .label { font-size: 0.82rem; opacity: 0.8; }
+
+  .result-item {
+    padding: 13px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid;
+  }
+  .result-item.ok { background: var(--verde-claro); border-color: var(--verde); }
+  .result-item.err { background: var(--vermelho-claro); border-color: var(--vermelho); }
+  .result-item h4 { font-size: 0.92rem; margin-bottom: 5px; }
+  .result-item p { font-size: 0.84rem; color: #2d3748; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.73rem;
+    font-weight: 600;
+  }
+  .badge-ok { background: var(--verde-claro); color: var(--verde); }
+  .badge-err { background: var(--vermelho-claro); color: var(--vermelho); }
+
+  .admin-panel { display: none; }
+  .admin-panel.active { display: block; }
+
+  textarea, input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+    font-family: inherit;
+  }
+  textarea { min-height: 90px; resize: vertical; }
+
+  .admin-q {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 13px;
+    margin-bottom: 12px;
+  }
+  .admin-q h4 { margin-bottom: 7px; color: var(--azul); font-size: 0.95rem; }
+
+  .hidden { display: none !important; }
+  .start-screen, .result-screen, .quiz-screen { display: none; }
+  .start-screen.active, .result-screen.active, .quiz-screen.active { display: block; }
+
+  .bulk-box {
+    background: #f0fff4;
+    border: 1px dashed var(--verde);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .bulk-box h4 { color: var(--verde); margin-bottom: 8px; font-size: 0.95rem; }
+  .bulk-box p { font-size: 0.82rem; color: var(--cinza); margin-bottom: 8px; }
+  .bulk-box pre {
+    background: #1a202c;
+    color: #e2e8f0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 0.78rem;
+    color: var(--cinza);
+  }
+
+  @media (max-width: 500px) {
+    header h1 { font-size: 1.3rem; }
+    .question-text { font-size: 1rem; }
+  }
+</style>
+</head>
+<body oncontextmenu="return false;">
+<div class="container">
+
+  <header>
+    <h1>📝 Quiz para Letícia</h1>
+    <p>Teste seus conhecimentos</p>
+  </header>
+
+  <!-- TELA INICIAL -->
+  <div id="startScreen" class="start-screen active">
+    <div class="card" style="text-align:center;">
+      <h2 style="margin-bottom:10px; color:var(--azul); font-size:1.2rem;">Pronta para começar?</h2>
+      <p style="color:var(--cinza); margin-bottom:18px; font-size:0.92rem;">
+        Responda as questões. Ao clicar em uma alternativa você já vê se acertou ou errou, com a explicação.
+      </p>
+      <div class="btn-row" style="justify-content:center;">
+        <button class="btn btn-primary" onclick="startQuiz()">Começar</button>
+        <button class="btn btn-secondary" onclick="showAdminLogin()">⚙️ Admin</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quizScreen" class="quiz-screen">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-text" id="progressText">1 / 10</div>
+
+    <div class="card" id="questionCard"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="btnNext" onclick="nextQuestion()" disabled>Próxima →</button>
+    </div>
+  </div>
+
+  <!-- RESULTADO -->
+  <div id="resultScreen" class="result-screen">
+    <div class="card" style="text-align:center;">
+      <div class="score-circle" id="scoreCircle">
+        <span class="num" id="scoreNum">0</span>
+        <span class="label">de 10</span>
+      </div>
+      <h2 id="scoreMessage" style="margin-bottom:6px; font-size:1.2rem;"></h2>
+      <p id="scorePercent" style="color:var(--cinza); margin-bottom:18px;"></p>
+      <div class="btn-row" style="justify-content:center;">
+        <button class="btn btn-primary" onclick="restartQuiz()">Fazer novamente</button>
+        <button class="btn btn-secondary" onclick="backToStart()">Início</button>
+      </div>
+    </div>
+    <h3 style="margin:18px 0 10px; color:var(--azul); font-size:1.05rem;">Revisão</h3>
+    <div id="reviewList"></div>
+  </div>
+
+  <!-- ADMIN -->
+  <div id="adminPanel" class="admin-panel">
+    <div class="card">
+      <h2 style="color:var(--azul); margin-bottom:12px; font-size:1.15rem;">⚙️ Painel Admin</h2>
+
+      <div id="adminLogin">
+        <label style="font-weight:600; font-size:0.9rem;">Senha:</label>
+        <input type="password" id="adminPass" placeholder="Digite a senha" onkeydown="if(event.key==='Enter')checkAdminPass()">
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="checkAdminPass()">Entrar</button>
+          <button class="btn btn-secondary" onclick="closeAdmin()">← Voltar ao Quiz</button>
+        </div>
+      </div>
+
+      <div id="adminContent" class="hidden">
+        <!-- IMPORTAÇÃO EM LOTE -->
+        <div class="bulk-box">
+          <h4>📥 Importar várias questões de uma vez</h4>
+          <p>Cole abaixo no formato indicado e clique em <b>Importar</b>. Substitui as questões atuais.</p>
+          <pre id="formatoExemplo">PERGUNTA: Qual teoria da posse o CC adotou?
+A) Teoria subjetiva de Savigny
+B) Teoria objetiva de Ihering
+C) Teoria mista
+D) Teoria personalista
+CORRETA: B
+EXPLICACAO_A: Savigny exige animus domini, o que o CC não exige.
+EXPLICACAO_B: Correto. O CC adotou Ihering (teoria objetiva).
+EXPLICACAO_C: Não existe essa teoria como regra no CC.
+EXPLICACAO_D: Não é a adotada.
+---
+PERGUNTA: Segunda pergunta aqui...
+A) Opção A
+B) Opção B
+C) Opção C
+D) Opção D
+CORRETA: A
+EXPLICACAO_A: Por que A está certa.
+EXPLICACAO_B: Por que B está errada.
+EXPLICACAO_C: Por que C está errada.
+EXPLICACAO_D: Por que D está errada.</pre>
+          <textarea id="bulkInput" placeholder="Cole aqui as questões no formato acima..." style="min-height:140px;"></textarea>
+          <button class="btn btn-success" onclick="importBulk()">📥 Importar questões</button>
+        </div>
+
+        <div class="btn-row" style="margin-bottom:14px;">
+          <button class="btn btn-success" onclick="addNewQuestion()">+ Nova questão</button>
+          <button class="btn btn-primary" onclick="saveQuestions()">💾 Salvar</button>
+          <button class="btn btn-secondary" onclick="exportQuestions()">📤 Exportar JSON</button>
+          <button class="btn btn-danger" onclick="resetToDefault()">↺ Padrão</button>
+        </div>
+
+        <div id="adminQuestionsList"></div>
+
+        <div class="btn-row" style="margin-top:14px;">
+          <button class="btn btn-secondary" onclick="closeAdmin()">← Voltar ao Quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Quiz para Letícia</footer>
+</div>
+
+<script>
+// ===================== QUESTÕES PADRÃO =====================
+const DEFAULT_QUESTIONS = [
+  {
+    q: "Qual teoria sobre a posse foi adotada como regra geral pelo Código Civil brasileiro de 2002 (art. 1.196)?",
+    options: [
+      "Teoria Pessoal dos Direitos Reais, segundo a qual a posse é uma relação puramente contratual entre pessoas.",
+      "Teoria Objetiva de Ihering, que considera possuidor aquele que exerce de fato algum dos poderes inerentes à propriedade.",
+      "Teoria da Dupla Relação, que condiciona a posse à existência de título formal registrado em cartório.",
+      "Teoria Subjetiva de Savigny, exigindo obrigatoriamente a comprovação simultânea do corpus e do animus domini."
+    ],
+    correct: 1,
+    explanations: [
+      "Não é bem isso. A teoria pessoal analisa as obrigações entre sujeitos, não correspondendo ao conceito adotado no Código Civil, que se filia à Teoria Realista sobre o poder de fato sobre a coisa.",
+      "Resposta correta. A legislação civil brasileira acolheu a concepção de Ihering, dispensando a investigação do elemento psíquico de intenção de dono para a caracterização da posse.",
+      "A posse independe de título formal ou registro imobiliário, configurando-se precipuamente pelo poder de fato exercido sobre o bem.",
+      "Essa teoria exige a intenção psíquica de ter a coisa como própria (animus domini), requisito que não é exigido pela regra geral do Código Civil brasileiro."
+    ]
+  },
+  {
+    q: "Segundo o art. 1.196 do Código Civil, considera-se possuidor:",
+    options: [
+      "Apenas aquele que é proprietário do bem",
+      "Todo aquele que tem de fato o exercício, pleno ou não, de algum dos poderes inerentes à propriedade",
+      "Somente quem possui animus domini (intenção de ser dono)",
+      "Apenas o detentor que exerce a posse em nome de outrem"
+    ],
+    correct: 1,
+    explanations: [
+      "Propriedade e posse são conceitos distintos. O proprietário pode não ter a posse e o possuidor pode não ser proprietário.",
+      "Resposta correta. É a definição literal do art. 1.196 do CC.",
+      "O CC adotou a teoria objetiva de Ihering e dispensa a exigência de animus domini.",
+      "Detentor (art. 1.198) não é possuidor; exerce a posse em nome de outrem."
+    ]
+  },
+  {
+    q: "João aluga um apartamento de Maria. Quem tem a posse direta?",
+    options: [
+      "Maria (locadora)",
+      "João (locatário)",
+      "Ambos têm posse direta",
+      "Nenhum dos dois, pois aluguel gera apenas detenção"
+    ],
+    correct: 1,
+    explanations: [
+      "Maria tem a posse indireta (mediata).",
+      "Resposta correta. Art. 1.197: o locatário tem a posse direta.",
+      "As posses coexistem, mas a direta é do locatário.",
+      "Locação gera posse (direta e indireta), não meras detenções."
+    ]
+  },
+  {
+    q: "Qual a diferença entre turbação e esbulho?",
+    options: [
+      "Turbação e esbulho são sinônimos",
+      "Turbação = privação total da posse; Esbulho = perturbação",
+      "Turbação = perturbação (continua na posse); Esbulho = privação total da posse",
+      "Turbação só ocorre em bens móveis; esbulho só em imóveis"
+    ],
+    correct: 2,
+    explanations: [
+      "São institutos diferentes, com ações possessórias distintas.",
+      "É o contrário: turbação é perturbação; esbulho é privação total.",
+      "Resposta correta. Turbação → manutenção de posse. Esbulho → reintegração de posse.",
+      "Ambos podem ocorrer em móveis e imóveis."
+    ]
+  },
+  {
+    q: "Pedro ameaça invadir o imóvel de João amanhã. Qual ação possessória é cabível?",
+    options: [
+      "Ação de reintegração de posse",
+      "Ação de manutenção de posse",
+      "Interdito proibitório",
+      "Ação reivindicatória"
+    ],
+    correct: 2,
+    explanations: [
+      "Reintegração é para quando já houve esbulho (perda da posse).",
+      "Manutenção é para turbação (perturbação da posse).",
+      "Resposta correta. Ameaça → interdito proibitório.",
+      "Reivindicatória é ação petitória do proprietário, não possessória."
+    ]
+  },
+  {
+    q: "Sobre a usucapião extraordinária (art. 1.238), assinale a correta:",
+    options: [
+      "Exige justo título e boa-fé, prazo de 10 anos",
+      "Prazo de 15 anos, dispensa título e boa-fé; pode cair para 10 anos se houver moradia ou obras produtivas",
+      "Prazo de 5 anos e área máxima de 250 m²",
+      "Só pode ser alegada por quem não é proprietário de outro imóvel"
+    ],
+    correct: 1,
+    explanations: [
+      "Isso é da usucapião ordinária (art. 1.242).",
+      "Resposta correta. Art. 1.238 e parágrafo único.",
+      "Isso é da usucapião especial urbana.",
+      "Esse requisito é da usucapião especial urbana e rural."
+    ]
+  },
+  {
+    q: "Na usucapião especial urbana (art. 1.240), qual o limite de área?",
+    options: [
+      "Até 50 hectares",
+      "Até 250 m²",
+      "Até 500 m²",
+      "Não há limite de área"
+    ],
+    correct: 1,
+    explanations: [
+      "50 hectares é o limite da usucapião especial rural.",
+      "Resposta correta. Área urbana de até 250 m².",
+      "O limite legal é 250 m².",
+      "Há limite: 250 m²."
+    ]
+  },
+  {
+    q: "João compra uma casa, assina a escritura pública, mas não registra no Cartório de Registro de Imóveis. Ele já é proprietário?",
+    options: [
+      "Sim, porque a escritura transfere a propriedade",
+      "Sim, porque o contrato de compra e venda já transfere",
+      "Não. Em regra, a propriedade imóvel só se transfere com o registro do título no Registro de Imóveis (art. 1.245)",
+      "Sim, desde que tenha pago o preço integralmente"
+    ],
+    correct: 2,
+    explanations: [
+      "Escritura formaliza o negócio, mas não transfere a propriedade imóvel.",
+      "Contrato gera obrigações, não a transferência da propriedade imobiliária.",
+      "Resposta correta. Art. 1.245 do CC.",
+      "O pagamento não substitui o registro."
+    ]
+  },
+  {
+    q: "Segundo o art. 1.223, perde-se a posse quando:",
+    options: [
+      "O possuidor deixa de ser proprietário",
+      "Cessa, embora contra a vontade do possuidor, o poder sobre o bem",
+      "O bem é alugado para terceiro",
+      "O possuidor viaja por mais de 6 meses"
+    ],
+    correct: 1,
+    explanations: [
+      "Perda da propriedade e perda da posse são coisas distintas.",
+      "Resposta correta. É a regra do art. 1.223.",
+      "Alugar gera posse indireta; não há perda da posse.",
+      "Ausência temporária não significa automaticamente perda da posse."
+    ]
+  },
+  {
+    q: "A propriedade, segundo o art. 1.228, confere ao titular os poderes de:",
+    options: [
+      "Usar e gozar apenas",
+      "Usar, gozar, dispor e reaver",
+      "Apenas dispor e reaver",
+      "Usar, gozar e reivindicar, mas não dispor"
+    ],
+    correct: 1,
+    explanations: [
+      "Faltam os poderes de dispor e reaver.",
+      "Resposta correta. Usar (jus utendi), gozar (jus fruendi), dispor (jus abutendi) e reaver (rei vindicatio).",
+      "Faltam usar e gozar.",
+      "O poder de dispor também integra a propriedade."
+    ]
+  }
+];
+
+// ===================== ESTADO =====================
+let questions = [];
+let currentIndex = 0;
+let answers = [];
+let answeredCurrent = false;
+const ADMIN_PASSWORD = "direitos2026";
+
+// ===================== LOAD / SAVE =====================
+function loadQuestions() {
+  const saved = localStorage.getItem("quiz_leticia_questions");
+  if (saved) {
+    try { questions = JSON.parse(saved); }
+    catch { questions = JSON.parse(JSON.stringify(DEFAULT_QUESTIONS)); }
+  } else {
+    questions = JSON.parse(JSON.stringify(DEFAULT_QUESTIONS));
+  }
+}
+
+function saveToStorage() {
+  localStorage.setItem("quiz_leticia_questions", JSON.stringify(questions));
+}
+
+// ===================== TELAS =====================
+function showScreen(id) {
+  document.querySelectorAll(".start-screen, .quiz-screen, .result-screen, .admin-panel")
+    .forEach(el => el.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+function backToStart() { showScreen("startScreen"); }
+
+// ===================== QUIZ =====================
+function startQuiz() {
+  loadQuestions();
+  if (!questions.length) { alert("Não há questões!"); return; }
+  currentIndex = 0;
+  answers = new Array(questions.length).fill(null);
+  answeredCurrent = false;
+  showScreen("quizScreen");
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentIndex];
+  const card = document.getElementById("questionCard");
+  const letters = ["A", "B", "C", "D", "E", "F"];
+  const alreadyAnswered = answers[currentIndex] !== null;
+
+  let html = `
+    <div class="question-num">${currentIndex + 1} / ${questions.length}</div>
+    <div class="question-text">${q.q}</div>
+  `;
+
+  q.options.forEach((opt, i) => {
+    let cls = "option";
+    let fbHtml = "";
+
+    if (alreadyAnswered) {
+      cls += " answered";
+      if (i === q.correct) cls += " correct";
+      else if (i === answers[currentIndex]) cls += " wrong";
+
+      const exp = (q.explanations && q.explanations[i]) ? q.explanations[i] : "";
+      const isCorrectOpt = i === q.correct;
+      fbHtml = `
+        <div class="option-feedback show ${isCorrectOpt ? "fb-correct" : "fb-wrong"}">
+          <span class="fb-label">${isCorrectOpt ? "✓ Resposta correta" : "✗ Não é bem isso"}</span>
+          ${exp}
+        </div>`;
+    }
+
+    html += `
+      <div class="${cls}" id="opt-${i}" onclick="selectOption(${i})">
+        <div class="option-header">
+          <div class="option-letter">${letters[i]}</div>
+          <div class="option-text">${opt}</div>
+        </div>
+        ${fbHtml}
+      </div>`;
+  });
+
+  card.innerHTML = html;
+
+  const pct = (currentIndex / questions.length) * 100;
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("progressText").textContent = `${currentIndex + 1} / ${questions.length}`;
+
+  const btn = document.getElementById("btnNext");
+  btn.disabled = !alreadyAnswered;
+  btn.textContent = currentIndex === questions.length - 1 ? "Ver resultado →" : "Próxima →";
+  answeredCurrent = alreadyAnswered;
+}
+
+function selectOption(idx) {
+  if (answers[currentIndex] !== null) return; // já respondeu
+
+  answers[currentIndex] = idx;
+  answeredCurrent = true;
+
+  const q = questions[currentIndex];
+  const letters = ["A", "B", "C", "D", "E", "F"];
+
+  q.options.forEach((_, i) => {
+    const el = document.getElementById(`opt-${i}`);
+    el.classList.add("answered");
+    el.onclick = null;
+
+    if (i === q.correct) el.classList.add("correct");
+    else if (i === idx) el.classList.add("wrong");
+
+    const exp = (q.explanations && q.explanations[i]) ? q.explanations[i] : "";
+    const isCorrectOpt = i === q.correct;
+
+    const fb = document.createElement("div");
+    fb.className = `option-feedback show ${isCorrectOpt ? "fb-correct" : "fb-wrong"}`;
+    fb.innerHTML = `
+      <span class="fb-label">${isCorrectOpt ? "✓ Resposta correta" : "✗ Não é bem isso"}</span>
+      ${exp}`;
+    el.appendChild(fb);
+  });
+
+  document.getElementById("btnNext").disabled = false;
+}
+
+function nextQuestion() {
+  if (answers[currentIndex] === null) return;
+  if (currentIndex < questions.length - 1) {
+    currentIndex++;
+    renderQuestion();
+  } else {
+    finishQuiz();
+  }
+}
+
+function finishQuiz() {
+  showScreen("resultScreen");
+  let correct = 0;
+  answers.forEach((a, i) => { if (a === questions[i].correct) correct++; });
+  const total = questions.length;
+  const pct = Math.round((correct / total) * 100);
+
+  document.getElementById("scoreNum").textContent = correct;
+  document.querySelector("#scoreCircle .label").textContent = `de ${total}`;
+
+  const circle = document.getElementById("scoreCircle");
+  if (pct >= 70) {
+    circle.style.borderColor = "var(--verde)";
+    circle.style.color = "var(--verde)";
+    document.getElementById("scoreMessage").textContent = "Mandou bem! 🎉";
+  } else if (pct >= 50) {
+    circle.style.borderColor = "#d69e2e";
+    circle.style.color = "#d69e2e";
+    document.getElementById("scoreMessage").textContent = "Quase lá! 💪";
+  } else {
+    circle.style.borderColor = "var(--vermelho)";
+    circle.style.color = "var(--vermelho)";
+    document.getElementById("scoreMessage").textContent = "Precisa revisar 📖";
+  }
+  document.getElementById("scorePercent").textContent = `${pct}% de acertos`;
+
+  const review = document.getElementById("reviewList");
+  review.innerHTML = "";
+  const letters = ["A", "B", "C", "D", "E"];
+
+  questions.forEach((q, i) => {
+    const userAns = answers[i];
+    const isCorrect = userAns === q.correct;
+    const div = document.createElement("div");
+    div.className = `result-item ${isCorrect ? "ok" : "err"}`;
+    div.innerHTML = `
+      <h4>
+        <span class="badge ${isCorrect ? "badge-ok" : "badge-err"}">${isCorrect ? "✓ Acertou" : "✗ Errou"}</span>
+        ${i + 1} / ${total}
+      </h4>
+      <p style="font-weight:600; margin-bottom:5px;">${q.q}</p>
+      <p><b>Sua resposta:</b> ${userAns !== null ? letters[userAns] + ") " + q.options[userAns] : "—"}</p>
+      ${!isCorrect ? `<p><b>Correta:</b> ${letters[q.correct]}) ${q.options[q.correct]}</p>` : ""}
+      <p style="margin-top:6px;"><b>Explicação:</b> ${(q.explanations && q.explanations[q.correct]) || ""}</p>
+    `;
+    review.appendChild(div);
+  });
+
+  document.getElementById("progressFill").style.width = "100%";
+}
+
+function restartQuiz() { startQuiz(); }
+
+// ===================== ADMIN =====================
+function showAdminLogin() {
+  showScreen("adminPanel");
+  document.getElementById("adminLogin").classList.remove("hidden");
+  document.getElementById("adminContent").classList.add("hidden");
+  document.getElementById("adminPass").value = "";
+}
+
+function checkAdminPass() {
+  if (document.getElementById("adminPass").value === ADMIN_PASSWORD) {
+    document.getElementById("adminLogin").classList.add("hidden");
+    document.getElementById("adminContent").classList.remove("hidden");
+    loadQuestions();
+    renderAdminList();
+  } else {
+    alert("Senha incorreta!");
+  }
+}
+
+function closeAdmin() { showScreen("startScreen"); }
+
+function renderAdminList() {
+  const container = document.getElementById("adminQuestionsList");
+  container.innerHTML = "";
+  questions.forEach((q, idx) => {
+    const div = document.createElement("div");
+    div.className = "admin-q";
+    const exps = (q.explanations || []).join("\n---\n");
+    div.innerHTML = `
+      <h4>Questão ${idx + 1}</h4>
+      <label style="font-size:0.82rem; font-weight:600;">Enunciado:</label>
+      <textarea id="aq-${idx}">${q.q}</textarea>
+      <label style="font-size:0.82rem; font-weight:600;">Alternativas (uma por linha):</label>
+      <textarea id="ao-${idx}">${q.options.join("\n")}</textarea>
+      <label style="font-size:0.82rem; font-weight:600;">Índice da correta (0=A, 1=B...):</label>
+      <input type="text" id="ac-${idx}" value="${q.correct}" style="width:70px;">
+      <label style="font-size:0.82rem; font-weight:600;">Explicações (uma por alternativa, separadas por ---):</label>
+      <textarea id="ae-${idx}" style="min-height:110px;">${exps}</textarea>
+      <button class="btn btn-danger" style="margin-top:6px; padding:7px 12px; font-size:0.82rem;" onclick="deleteQuestion(${idx})">🗑️ Remover</button>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function collectAdminData() {
+  const arr = [];
+  for (let i = 0; i < questions.length; i++) {
+    const qEl = document.getElementById(`aq-${i}`);
+    if (!qEl) continue;
+    const opts = document.getElementById(`ao-${i}`).value.split("\n").map(s => s.trim()).filter(Boolean);
+    const correct = parseInt(document.getElementById(`ac-${i}`).value, 10) || 0;
+    const expsRaw = document.getElementById(`ae-${i}`).value.split("---").map(s => s.trim());
+    arr.push({
+      q: qEl.value.trim(),
+      options: opts,
+      correct,
+      explanations: expsRaw
+    });
+  }
+  return arr;
+}
+
+function saveQuestions() {
+  questions = collectAdminData();
+  saveToStorage();
+  alert("Salvo com sucesso!");
+  renderAdminList();
+}
+
+function addNewQuestion() {
+  questions = collectAdminData();
+  questions.push({
+    q: "Nova questão",
+    options: ["Alternativa A", "Alternativa B", "Alternativa C", "Alternativa D"],
+    correct: 0,
+    explanations: ["Explicação A", "Explicação B", "Explicação C", "Explicação D"]
+  });
+  renderAdminList();
+}
+
+function deleteQuestion(idx) {
+  if (!confirm("Remover?")) return;
+  questions = collectAdminData();
+  questions.splice(idx, 1);
+  renderAdminList();
+}
+
+function resetToDefault() {
+  if (!confirm("Restaurar questões padrão?")) return;
+  questions = JSON.parse(JSON.stringify(DEFAULT_QUESTIONS));
+  saveToStorage();
+  renderAdminList();
+}
+
+function exportQuestions() {
+  questions = collectAdminData();
+  const blob = new Blob([JSON.stringify(questions, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "questoes-leticia.json";
+  a.click();
+}
+
+// ===================== IMPORTAÇÃO EM LOTE =====================
+function importBulk() {
+  const text = document.getElementById("bulkInput").value.trim();
+  if (!text) { alert("Cole as questões primeiro!"); return; }
+
+  const blocks = text.split(/^---$/m).map(b => b.trim()).filter(Boolean);
+  const parsed = [];
+
+  for (const block of blocks) {
+    const lines = block.split("\n").map(l => l.trim()).filter(Boolean);
+    let pergunta = "";
+    const opcoes = [];
+    let correta = 0;
+    const explicacoes = [];
+
+    for (const line of lines) {
+      if (/^PERGUNTA:/i.test(line)) {
+        pergunta = line.replace(/^PERGUNTA:\s*/i, "").trim();
+      } else if (/^[A-F]\)\s*/i.test(line)) {
+        opcoes.push(line.replace(/^[A-F]\)\s*/i, "").trim());
+      } else if (/^CORRETA:/i.test(line)) {
+        const letra = line.replace(/^CORRETA:\s*/i, "").trim().toUpperCase();
+        correta = letra.charCodeAt(0) - 65; // A=0, B=1...
+      } else if (/^EXPLICACAO_[A-F]:/i.test(line)) {
+        explicacoes.push(line.replace(/^EXPLICACAO_[A-F]:\s*/i, "").trim());
+      }
+    }
+
+    if (pergunta && opcoes.length >= 2) {
+      // garantir que tenha explicação para cada opção
+      while (explicacoes.length < opcoes.length) explicacoes.push("");
+      parsed.push({
+        q: pergunta,
+        options: opcoes,
+        correct: correta,
+        explanations: explicacoes
+      });
+    }
+  }
+
+  if (!parsed.length) {
+    alert("Não consegui ler nenhuma questão. Confira o formato.");
+    return;
+  }
+
+  questions = parsed;
+  saveToStorage();
+  document.getElementById("bulkInput").value = "";
+  renderAdminList();
+  alert(`Importadas ${parsed.length} questões com sucesso!`);
+}
+
+// ===================== INIT =====================
+loadQuestions();
+
+// Bloqueia atalhos comuns de cópia
+document.addEventListener("keydown", function(e) {
+  if ((e.ctrlKey || e.metaKey) && (e.key === "c" || e.key === "C" || e.key === "a" || e.key === "A" || e.key === "u" || e.key === "U")) {
+    e.preventDefault();
+  }
+});
+</script>
+</body>
+</html>
