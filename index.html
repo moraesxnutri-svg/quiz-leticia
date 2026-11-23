@@ -405,7 +405,7 @@ const DEFAULT_QUESTIONS = [
     ]
   },
   {
-    q: "Quando houver a produção de prova de uma elementar ou circunstância não contida expressamente na peça acusatória, configurando a presença de um fato processual novo, o juiz deve observar o instituto da ________ libelli (art. 384 do CPP), o qual exige o aditamento da denúncia ou queixa. Qual é o termo que completa corretamente a lacuna?",
+    q: "Quando houver a produção de prova de uma elementar ou circunstância não contida expressamente na peça acusatória, configurando a presença de um fato processual novo, o juiz deve observar o instituto da ________ libelli (art. 384 do CPP), o qual exige o aditamento da denúncia ou queixa. Qual termo completa a lacuna?",
     options: [
       "emendatio",
       "mutatio",
@@ -421,19 +421,20 @@ const DEFAULT_QUESTIONS = [
     ]
   },
   {
-    q: "Sobre os institutos processuais previstos na Lei nº 9.099/95, assinale a afirmativa INCORRETA:",
+    type: "multi",
+    q: "Sobre os institutos processuais previstos na Lei nº 9.099/95 e a sua aplicação nos ritos penais, assinale as afirmativas CORRETAS:",
     options: [
+      "O descumprimento do acordo de transação penal gera automaticamente reincidência e maus antecedentes na ficha do autor do fato.",
       "A homologação da composição dos danos civis em ação penal de iniciativa privada acarreta a extinção da punibilidade pela renúncia ao direito de queixa.",
       "A transação penal é cabível para infrações penais com pena máxima não superior a 2 anos, constituindo ato bilateral.",
-      "A suspensão condicional do processo pode ser oferecida quando a pena mínima cominada ao crime for igual ou inferior a 1 ano.",
-      "O descumprimento do acordo de transação penal gera automaticamente reincidência e maus antecedentes na ficha do autor do fato."
+      "A suspensão condicional do processo pode ser oferecida quando a pena mínima cominada ao crime for igual ou inferior a 1 ano."
     ],
-    correct: 3,
+    correct: [1, 2, 3],
     explanations: [
-      "Afirmativa correta. A composição civil homologada em ação privada equivale à renúncia e extingue a punibilidade.",
-      "Afirmativa correta. A transação penal aplica-se a infrações de menor potencial ofensivo (pena máxima até 2 anos).",
-      "Afirmativa correta. A suspensão condicional do processo (art. 89 da Lei 9.099/95) exige pena mínima igual ou inferior a 1 ano.",
-      "Resposta correta (é a INCORRETA). O descumprimento da transação penal não gera automaticamente reincidência nem maus antecedentes; o processo segue seu curso normal."
+      "Incorreta. O descumprimento da transação penal não gera automaticamente reincidência nem maus antecedentes; o processo segue seu curso normal.",
+      "Correta. A composição civil homologada em ação privada equivale à renúncia e extingue a punibilidade.",
+      "Correta. A transação penal aplica-se a infrações de menor potencial ofensivo (pena máxima até 2 anos).",
+      "Correta. A suspensão condicional do processo (art. 89 da Lei 9.099/95) exige pena mínima igual ou inferior a 1 ano."
     ]
   },
   {
@@ -501,19 +502,20 @@ const DEFAULT_QUESTIONS = [
     ]
   },
   {
-    q: "Durante os debates orais na sessão de julgamento do Tribunal do Júri, o art. 478 do CPP veda a referência a determinados atos e elementos processuais para evitar a indução indevida dos jurados. Qual das opções abaixo NÃO está entre as proibições do art. 478?",
+    type: "multi",
+    q: "Durante os debates orais na sessão de julgamento do Tribunal do Júri, o art. 478 do CPP veda a referência a determinados atos e elementos processuais para evitar a indução indevida dos jurados. Quais dos itens a seguir são alvos dessa proibição legal?",
     options: [
-      "Referência ao silêncio do acusado ou à ausência de seu interrogatório por falta de requerimento.",
-      "Referência à decisão de pronúncia e às decisões posteriores que a julgaram admissível.",
-      "Referência ao uso de algemas pelo acusado durante a sessão de julgamento.",
-      "Referência aos depoimentos prestados pelas testemunhas de acusação na primeira fase do procedimento."
+      "Ao silêncio do acusado ou à ausência de seu interrogatório por falta de requerimento.",
+      "À decisão de pronúncia e às decisões posteriores que a julgaram admissível.",
+      "Ao uso de algemas pelo acusado durante a sessão de julgamento.",
+      "Aos depoimentos prestados pelas testemunhas de acusação na primeira fase do procedimento."
     ],
-    correct: 3,
+    correct: [0, 1, 2],
     explanations: [
-      "Essa referência é vedada pelo art. 478 do CPP.",
-      "Essa referência também é vedada pelo art. 478 do CPP.",
-      "O uso de algemas e a menção a ele também estão entre as restrições para não induzir os jurados.",
-      "Resposta correta (é a que NÃO é proibida). Os depoimentos das testemunhas prestados na primeira fase podem ser referidos nos debates, não estando na lista de vedações do art. 478."
+      "Correta. O art. 478 veda referência ao silêncio do acusado ou à ausência de interrogatório.",
+      "Correta. É vedada a referência à decisão de pronúncia e às que a confirmaram.",
+      "Correta. Também é vedada a referência ao uso de algemas pelo acusado.",
+      "Incorreta. Os depoimentos das testemunhas da primeira fase não estão na lista de vedações do art. 478 e podem ser referidos nos debates."
     ]
   },
   {
@@ -527,7 +529,7 @@ const DEFAULT_QUESTIONS = [
     correct: 1,
     explanations: [
       "Mesmo com pena menor, o juiz não pode condenar por fato diverso sem observar a mutatio ou emendatio nos termos legais.",
-      "Resposta correta. O princípio da correlação determina que a sentença do magistrado deve ficar estritamente demarcada pelos fatos e pedidos narrados na peça acusatória, impedindo que o juiz condene o réu por fatos não alegados na acusação.",
+      "Resposta correta. O princípio da correlação determina que a sentença do magistrado deve ficar estritamente demarcada pelos fatos e pedidos narrados na peça acusatória.",
       "A alteração de fatos exige mutatio libelli com aditamento; a mera mudança de capitulação pode ocorrer via emendatio.",
       "O princípio da correlação aplica-se a todas as ações penais, públicas e privadas."
     ]
@@ -571,6 +573,7 @@ let questions = [];
 let currentIndex = 0;
 let answers = [];
 let answeredCurrent = false;
+let pendingMulti = null;
 const ADMIN_PASSWORD = "direitos2026";
 
 // ===================== LOAD / SAVE =====================
@@ -594,11 +597,29 @@ function showScreen(id) {
 function backToStart() { showScreen("startScreen"); }
 
 // ===================== QUIZ =====================
+
+function isMulti(q) {
+  return q.type === "multi" || Array.isArray(q.correct);
+}
+
+function normalizeCorrect(q) {
+  if (Array.isArray(q.correct)) return q.correct.slice().sort((a,b)=>a-b);
+  return [q.correct];
+}
+
+function arraysEqual(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+  const sa = a.slice().sort((x,y)=>x-y);
+  const sb = b.slice().sort((x,y)=>x-y);
+  return sa.every((v, i) => v === sb[i]);
+}
+
 function startQuiz() {
   loadQuestions();
   if (!questions.length) { alert("Não há questões!"); return; }
   currentIndex = 0;
   answers = new Array(questions.length).fill(null);
+  pendingMulti = null; // seleção temporária em multi
   answeredCurrent = false;
   showScreen("quizScreen");
   renderQuestion();
@@ -609,97 +630,148 @@ function renderQuestion() {
   const card = document.getElementById("questionCard");
   const letters = ["A", "B", "C", "D", "E", "F"];
   const alreadyAnswered = answers[currentIndex] !== null;
+  const multi = isMulti(q);
 
   let html = `
     <div class="question-num">${currentIndex + 1} / ${questions.length}</div>
     <div class="question-text">${q.q}</div>
   `;
+  if (multi && !alreadyAnswered) {
+    html += `<div class="multi-hint">Selecione todas as alternativas corretas e depois confirme.</div>`;
+  }
+
+  const userAns = answers[currentIndex];
+  const correctSet = normalizeCorrect(q);
+  const selectedSet = alreadyAnswered
+    ? (Array.isArray(userAns) ? userAns : [userAns])
+    : (pendingMulti || []);
 
   q.options.forEach((opt, i) => {
     let cls = "option";
     let fbHtml = "";
+    const isSel = selectedSet.includes(i);
 
     if (alreadyAnswered) {
       cls += " answered";
-      if (i === q.correct) cls += " correct";
-      else if (i === answers[currentIndex]) cls += " wrong";
+      const isCorrectOpt = correctSet.includes(i);
+      const userPicked = selectedSet.includes(i);
+      if (isCorrectOpt) cls += " correct";
+      else if (userPicked) cls += " wrong";
 
       const exp = (q.explanations && q.explanations[i]) ? q.explanations[i] : "";
-      const isCorrectOpt = i === q.correct;
       fbHtml = `
         <div class="option-feedback show ${isCorrectOpt ? "fb-correct" : "fb-wrong"}">
-          <span class="fb-label">${isCorrectOpt ? "✓ Resposta correta" : "✗ Não é bem isso"}</span>
+          <span class="fb-label">${isCorrectOpt ? "✓ Correta" : (userPicked ? "✗ Incorreta" : "—")}</span>
           ${exp}
         </div>`;
+    } else if (multi && isSel) {
+      cls += " selected";
     }
 
+    const checkInner = multi
+      ? `<span class="check-box">${(alreadyAnswered ? correctSet.includes(i) : isSel) ? "✓" : ""}</span>`
+      : `<span class="letter">${letters[i]}</span>`;
+
+    const click = alreadyAnswered
+      ? ""
+      : (multi ? `onclick="toggleMulti(${i})"` : `onclick="selectOption(${i})"`);
+
     html += `
-      <div class="${cls}" id="opt-${i}" onclick="selectOption(${i})">
-        <div class="option-header">
-          <div class="option-letter">${letters[i]}</div>
-          <div class="option-text">${opt}</div>
-        </div>
+      <div class="${cls}" id="opt-${i}" ${click}>
+        ${checkInner}
+        <div class="option-text">${opt}</div>
         ${fbHtml}
       </div>`;
   });
 
+  if (multi && !alreadyAnswered) {
+    html += `<button class="btn btn-primary btn-confirm" id="btnConfirmMulti" onclick="confirmMulti()" disabled>Confirmar resposta</button>`;
+  }
+
   card.innerHTML = html;
 
-  const pct = (currentIndex / questions.length) * 100;
+  // progress
+  const pct = ((currentIndex) / questions.length) * 100;
   document.getElementById("progressFill").style.width = pct + "%";
-  document.getElementById("progressText").textContent = `${currentIndex + 1} / ${questions.length}`;
+  document.getElementById("progressText").textContent = `${currentIndex + 1} de ${questions.length}`;
 
-  const btn = document.getElementById("btnNext");
-  btn.disabled = !alreadyAnswered;
-  btn.textContent = currentIndex === questions.length - 1 ? "Ver resultado →" : "Próxima →";
-  answeredCurrent = alreadyAnswered;
+  // next button state
+  const nextBtn = document.getElementById("btnNext");
+  if (nextBtn) {
+    nextBtn.disabled = !alreadyAnswered;
+    nextBtn.textContent = currentIndex === questions.length - 1 ? "Ver resultado" : "Próxima";
+  }
+
+  if (multi && !alreadyAnswered) updateConfirmBtn();
+}
+
+function toggleMulti(idx) {
+  if (answers[currentIndex] !== null) return;
+  if (!pendingMulti) pendingMulti = [];
+  const pos = pendingMulti.indexOf(idx);
+  if (pos >= 0) pendingMulti.splice(pos, 1);
+  else pendingMulti.push(idx);
+
+  // update UI
+  const q = questions[currentIndex];
+  q.options.forEach((_, i) => {
+    const el = document.getElementById(`opt-${i}`);
+    if (!el) return;
+    const on = pendingMulti.includes(i);
+    el.classList.toggle("selected", on);
+    const box = el.querySelector(".check-box");
+    if (box) box.textContent = on ? "✓" : "";
+  });
+  updateConfirmBtn();
+}
+
+function updateConfirmBtn() {
+  const btn = document.getElementById("btnConfirmMulti");
+  if (btn) btn.disabled = !pendingMulti || pendingMulti.length === 0;
+}
+
+function confirmMulti() {
+  if (!pendingMulti || pendingMulti.length === 0) return;
+  if (answers[currentIndex] !== null) return;
+  answers[currentIndex] = pendingMulti.slice();
+  pendingMulti = null;
+  answeredCurrent = true;
+  renderQuestion();
 }
 
 function selectOption(idx) {
-  if (answers[currentIndex] !== null) return; // já respondeu
-
+  if (answers[currentIndex] !== null) return;
   answers[currentIndex] = idx;
   answeredCurrent = true;
-
-  const q = questions[currentIndex];
-  const letters = ["A", "B", "C", "D", "E", "F"];
-
-  q.options.forEach((_, i) => {
-    const el = document.getElementById(`opt-${i}`);
-    el.classList.add("answered");
-    el.onclick = null;
-
-    if (i === q.correct) el.classList.add("correct");
-    else if (i === idx) el.classList.add("wrong");
-
-    const exp = (q.explanations && q.explanations[i]) ? q.explanations[i] : "";
-    const isCorrectOpt = i === q.correct;
-
-    const fb = document.createElement("div");
-    fb.className = `option-feedback show ${isCorrectOpt ? "fb-correct" : "fb-wrong"}`;
-    fb.innerHTML = `
-      <span class="fb-label">${isCorrectOpt ? "✓ Resposta correta" : "✗ Não é bem isso"}</span>
-      ${exp}`;
-    el.appendChild(fb);
-  });
-
-  document.getElementById("btnNext").disabled = false;
+  pendingMulti = null;
+  renderQuestion();
 }
 
 function nextQuestion() {
   if (answers[currentIndex] === null) return;
   if (currentIndex < questions.length - 1) {
     currentIndex++;
+    pendingMulti = null;
     renderQuestion();
   } else {
     finishQuiz();
   }
 }
 
+function isAnswerCorrect(q, userAns) {
+  if (userAns === null || userAns === undefined) return false;
+  if (isMulti(q)) {
+    const correct = normalizeCorrect(q);
+    const user = Array.isArray(userAns) ? userAns : [userAns];
+    return arraysEqual(correct, user);
+  }
+  return userAns === q.correct;
+}
+
 function finishQuiz() {
   showScreen("resultScreen");
   let correct = 0;
-  answers.forEach((a, i) => { if (a === questions[i].correct) correct++; });
+  answers.forEach((a, i) => { if (isAnswerCorrect(questions[i], a)) correct++; });
   const total = questions.length;
   const pct = Math.round((correct / total) * 100);
 
@@ -724,28 +796,40 @@ function finishQuiz() {
 
   const review = document.getElementById("reviewList");
   review.innerHTML = "";
-  const letters = ["A", "B", "C", "D", "E"];
+  const letters = ["A", "B", "C", "D", "E", "F"];
 
   questions.forEach((q, i) => {
     const userAns = answers[i];
-    const isCorrect = userAns === q.correct;
+    const ok = isAnswerCorrect(q, userAns);
     const div = document.createElement("div");
-    div.className = `result-item ${isCorrect ? "ok" : "err"}`;
+    div.className = `result-item ${ok ? "ok" : "err"}`;
+
+    let userText = "—";
+    if (userAns !== null && userAns !== undefined) {
+      if (Array.isArray(userAns)) {
+        userText = userAns.map(j => letters[j] + ") " + q.options[j]).join("<br>");
+      } else {
+        userText = letters[userAns] + ") " + q.options[userAns];
+      }
+    }
+    const correctSet = normalizeCorrect(q);
+    const correctText = correctSet.map(j => letters[j] + ") " + q.options[j]).join("<br>");
+
     div.innerHTML = `
       <h4>
-        <span class="badge ${isCorrect ? "badge-ok" : "badge-err"}">${isCorrect ? "✓ Acertou" : "✗ Errou"}</span>
-        ${i + 1} / ${total}
+        <span class="badge ${ok ? "badge-ok" : "badge-err"}">${ok ? "Certa" : "Errada"}</span>
+        Questão ${i + 1}
       </h4>
-      <p style="font-weight:600; margin-bottom:5px;">${q.q}</p>
-      <p><b>Sua resposta:</b> ${userAns !== null ? letters[userAns] + ") " + q.options[userAns] : "—"}</p>
-      ${!isCorrect ? `<p><b>Correta:</b> ${letters[q.correct]}) ${q.options[q.correct]}</p>` : ""}
-      <p style="margin-top:6px;"><b>Explicação:</b> ${(q.explanations && q.explanations[q.correct]) || ""}</p>
+      <p class="rq">${q.q}</p>
+      <p><strong>Sua resposta:</strong><br>${userText}</p>
+      ${!ok ? `<p><strong>Resposta correta:</strong><br>${correctText}</p>` : ""}
     `;
     review.appendChild(div);
   });
-
-  document.getElementById("progressFill").style.width = "100%";
 }
+
+
+
 
 function restartQuiz() { startQuiz(); }
 
