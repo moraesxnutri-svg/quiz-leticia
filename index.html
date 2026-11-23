@@ -773,17 +773,19 @@ function finishQuiz() {
   let correct = 0;
   answers.forEach((a, i) => { if (isAnswerCorrect(questions[i], a)) correct++; });
   const total = questions.length;
+  const nota = total > 0 ? (correct / total) * 10 : 0;
+  const notaStr = nota.toFixed(1).replace(".", ",");
   const pct = Math.round((correct / total) * 100);
 
-  document.getElementById("scoreNum").textContent = correct;
-  document.querySelector("#scoreCircle .label").textContent = `de ${total}`;
+  document.getElementById("scoreNum").textContent = notaStr;
+  document.querySelector("#scoreCircle .label").textContent = "de 10,0";
 
   const circle = document.getElementById("scoreCircle");
-  if (pct >= 70) {
+  if (nota >= 7.0) {
     circle.style.borderColor = "var(--verde)";
     circle.style.color = "var(--verde)";
     document.getElementById("scoreMessage").textContent = "Mandou bem! 🎉";
-  } else if (pct >= 50) {
+  } else if (nota >= 5.0) {
     circle.style.borderColor = "#d69e2e";
     circle.style.color = "#d69e2e";
     document.getElementById("scoreMessage").textContent = "Quase lá! 💪";
@@ -792,7 +794,7 @@ function finishQuiz() {
     circle.style.color = "var(--vermelho)";
     document.getElementById("scoreMessage").textContent = "Precisa revisar 📖";
   }
-  document.getElementById("scorePercent").textContent = `${pct}% de acertos`;
+  document.getElementById("scorePercent").textContent = `${correct} de ${total} acertos (${pct}%) · Nota ${notaStr}`;
 
   const review = document.getElementById("reviewList");
   review.innerHTML = "";
