@@ -373,197 +373,231 @@
 // ===================== QUESTÕES PADRÃO =====================
 const DEFAULT_QUESTIONS = [
   {
-    q: "No processo penal brasileiro, a distinção entre despachos de mero expediente e decisões interlocutórias reflete a presença ou ausência de cunho decisório e a geração de prejuízo às partes. Qual das alternativas a seguir exemplifica uma decisão de natureza interlocutória?",
+    q: "No processo penal brasileiro, a doutrina diferencia as causas que impedem o juiz de atuar daquelas que apenas geram suspeição. Qual é a principal distinção teórica entre o impedimento e a suspeição quanto à natureza das causas e à presunção de parcialidade?",
     options: [
-      "Despacho de 'intime-se' a testemunha para comparecimento à audiência.",
-      "Indeferimento do pedido de habilitação como assistente da acusação.",
-      "Despacho ordenando 'dê-se vista' ao Ministério Público.",
-      "Despacho determinando 'junte-se' aos autos petição apresentada."
+      "Ambos os institutos fundamentam-se em causas objetivas, diferenciando-se apenas porque o impedimento gera presunção relativa e a suspeição gera presunção absoluta.",
+      "O impedimento decorre de causas objetivas e gera presunção absoluta de parcialidade, enquanto a suspeição deriva de causas subjetivas e gera presunção relativa.",
+      "O impedimento aplica-se exclusivamente aos magistrados com presunção relativa, enquanto a suspeição estende-se aos auxiliares da justiça com presunção absoluta.",
+      "O impedimento fundamenta-se em elementos subjetivos e gera presunção relativa, enquanto a suspeição envolve razões objetivas e presunção absoluta."
     ],
     correct: 1,
     explanations: [
-      "Não é bem isso. A ordenação de intimação serve para a simples marcha processual e não gera gravame às partes envolvidas.",
-      "Resposta correta. Decisões interlocutórias possuem um mínimo de caráter decisório e acarretam gravame ou prejuízo para uma das partes no curso do procedimento.",
-      "Atos de movimentação procedimental rotineira não resolvem questões pendentes e carecem de cunho decisório.",
-      "Trata-se de um ato meramente ordenatório do processo, sem qualquer conteúdo decisório ou prejuízo para as partes."
+      "Não é bem isso. A doutrina diferencia ambos os institutos pela natureza objetiva do impedimento em contraste com a essência subjetiva da suspeição.",
+      "Resposta correta. As hipóteses de impedimento vinculam-se a dados objetivos do processo e à vedação absoluta de atuação, ao passo que a suspeição abrange elementos de ordem pessoal e subjetiva cuja parcialidade admite prova em contrário.",
+      "A distinção de presunção não se baseia no sujeito, visto que as regras de impedimento e suspeição aplicam-se a todos os sujeitos processuais previstos na norma.",
+      "Esse raciocínio inverte a natureza dos vícios, atribuindo características subjetivas ao impedimento e objetivas à suspeição."
     ]
   },
   {
-    q: "Ao elaborar uma sentença penal, o magistrado deve cumprir o dever constitucional de fundamentação. Em qual das seções constitutivas da sentença o juiz deve obrigatoriamente analisar e enfrentar a totalidade das teses acusatórias e defensivas, sob o aspecto fático e jurídico?",
+    q: "Um réu preso em um estabelecimento prisional da mesma unidade federativa foi citado exclusivamente por edital após ter sido frustrada a localização por oficial de justiça em sua antiga residência. À luz da jurisprudência sumulada do Supremo Tribunal Federal (Súmula 351), qual é a consequência jurídica dessa citação?",
     options: [
-      "Dispositivo",
-      "Motivação",
-      "Relatório",
-      "Ementa"
+      "O processo é suspenso por prazo indeterminado sem que haja invalidade do ato citatório editalício.",
+      "A citação é válida, desde que o diretor do presídio seja notificado no prazo de cinco dias.",
+      "A citação por edital é nula, sendo indispensável a citação pessoal do acusado preso.",
+      "A citação converte-se automaticamente em citação por hora certa na pessoa do diretor do estabelecimento."
     ],
-    correct: 1,
+    correct: 2,
     explanations: [
-      "O dispositivo é a parte final que declara a absolvição ou condenação do réu, realizando a dosimetria sem conter a apreciação fundamentada das teses.",
-      "Isso mesmo! A motivação é o ponto nevrálgico da sentença, exigindo a valoração fática da prova e o enfrentamento de todas as teses jurídicas sob pena de nulidade.",
-      "O relatório serve apenas para identificar as partes e resumir a morfologia e os acontecimentos objetivos ocorridos ao longo do processo.",
-      "A ementa consiste em um resumo sintético da decisão em julgamentos colegiados, não integrando a estrutura tripartite fundamental da sentença em primeiro grau."
-    ]
-  },
-  {
-    q: "Quando houver a produção de prova de uma elementar ou circunstância não contida expressamente na peça acusatória, configurando a presença de um fato processual novo, o juiz deve observar o instituto da ________ libelli (art. 384 do CPP), o qual exige o aditamento da denúncia ou queixa. Qual termo completa a lacuna?",
-    options: [
-      "emendatio",
-      "mutatio",
-      "ampliatio",
-      "correctio"
-    ],
-    correct: 1,
-    explanations: [
-      "A emendatio libelli (art. 383 do CPP) permite ao juiz corrigir a capitulação jurídica sem alterar os fatos narrados, não exigindo aditamento.",
-      "Resposta correta. A mutatio libelli ocorre quando surge prova de elemento ou fato novo não descrito na denúncia, exigindo o aditamento ministerial para preservar o contraditório e a correlação.",
-      "Não existe o instituto da ampliatio libelli no CPP com esse significado.",
-      "Não há instituto processualmente denominado correctio libelli no Código de Processo Penal."
+      "Não é bem isso. A inobservância da citação pessoal do réu custodiado gera a nulidade do ato e inviabiliza o prosseguimento regular do processo por meio do edital.",
+      "A simples notificação do diretor do estabelecimento prisional supre apenas a requisição para apresentação, permanecendo a obrigatoriedade da citação pessoal do acusado.",
+      "Resposta correta. A jurisprudência assentada na Súmula 351 do STF exige a citação pessoal do réu preso na mesma unidade federativa, eivando de nulidade a citação editalícia nesses casos.",
+      "O Código de Processo Penal não prevê a conversão automática de citação editalícia em citação por hora certa dirigida ao dirigente do estabelecimento penal."
     ]
   },
   {
     type: "multi",
-    q: "Sobre os institutos processuais previstos na Lei nº 9.099/95 e a sua aplicação nos ritos penais, assinale as afirmativas CORRETAS:",
+    q: "No que tange à inatividade processual no processo penal, identifique as afirmativas corretas quanto às diferenças entre a ausência (inatividade real) e o desconhecimento (inatividade ficta).",
     options: [
-      "O descumprimento do acordo de transação penal gera automaticamente reincidência e maus antecedentes na ficha do autor do fato.",
-      "A homologação da composição dos danos civis em ação penal de iniciativa privada acarreta a extinção da punibilidade pela renúncia ao direito de queixa.",
-      "A transação penal é cabível para infrações penais com pena máxima não superior a 2 anos, constituindo ato bilateral.",
-      "A suspensão condicional do processo pode ser oferecida quando a pena mínima cominada ao crime for igual ou inferior a 1 ano."
+      "Na ausência, o réu é citado pessoalmente e deixa de oferecer resposta à acusação sem justificativa, prosseguindo o feito com defensor constituído ou dativo sem nova comunicação dos atos posteriores.",
+      "De acordo com a Súmula 415 do STJ, o período de suspensão da prescrição no caso do art. 366 do CPP é limitado pelo tempo regulado pela pena máxima cominada ao delito.",
+      "A revelia no processo penal opera de forma idêntica ao processo civil, gerando presunção de veracidade dos fatos imputados e dispensa de atuação defensiva.",
+      "No desconhecimento, esgotadas as tentativas de citação real, o réu é citado por edital e não comparece, aplicando-se a suspensão do processo e da prescrição nos termos do art. 366 do CPP."
+    ],
+    correct: [0, 1, 3],
+    explanations: [
+      "Correta. Na ausência o réu foi citado pessoalmente e opta por não responder; o processo segue com defensor, sem novas intimações ao réu.",
+      "Correta. A Súmula 415 do STJ limita o prazo de suspensão da prescrição do art. 366 ao máximo da pena abstratamente cominada.",
+      "Incorreta. No processo penal a revelia/ausência não gera presunção de veracidade dos fatos nem dispensa a defesa técnica.",
+      "Correta. No desconhecimento (citação por edital sem comparecimento) aplica-se a suspensão do processo e da prescrição (art. 366 do CPP)."
+    ]
+  },
+  {
+    q: "Um indivíduo é denunciado pela prática de um crime cuja pena máxima cominada em abstrato é de 3 anos de reclusão. Considerando os critérios estabelecidos no Código de Processo Penal para a definição dos ritos processuais comuns, qual rito deve ser adotado?",
+    options: [
+      "Rito especial dos funcionários públicos, independentemente da qualidade do agente, em virtude da quantidade de pena.",
+      "Rito sumário, pois é destinado aos crimes cuja pena máxima cominada seja inferior a 4 anos e superior a 2 anos.",
+      "Rito sumaríssimo, haja vista que a pena máxima de 3 anos se enquadra na competência geral do Juizado Especial Criminal.",
+      "Rito ordinário, visto que se aplica a todas as infrações punidas com pena de reclusão superior a 1 ano."
+    ],
+    correct: 1,
+    explanations: [
+      "Não é bem isso. Os ritos especiais dependem da natureza do crime ou da qualidade do agente, sendo descabida a sua incidência automática apenas pelo quantum de pena de 3 anos.",
+      "Resposta correta. O procedimento sumário é aplicável às infrações cuja sanção máxima seja inferior a 4 anos e superior a 2 anos.",
+      "O rito sumaríssimo é delimitado pelo teto de pena máxima de até 2 anos, patamar inferior ao delito hipotético de 3 anos.",
+      "O procedimento ordinário reserva-se aos crimes cujas penas máximas sejam iguais ou superiores a 4 anos."
+    ]
+  },
+  {
+    q: "Quando o juiz rejeita liminarmente a denúncia ou a queixa com base na falta de justa causa ou de pressuposto processual (art. 395 do CPP), qual é o recurso cabível expressamente previsto no Código de Processo Penal?",
+    options: [
+      "Agravo em execução penal, nos termos do art. 197 da Lei de Execução Penal.",
+      "Embargos infringentes, dirigidos ao próprio juízo prolator da decisão de rejeição.",
+      "Recurso em Sentido Estrito, fundamentado no art. 581, inciso I, do CPP.",
+      "Apelação criminal, fundada no art. 593, inciso I, do CPP."
+    ],
+    correct: 2,
+    explanations: [
+      "Não é bem isso. O agravo em execução é restrito à fase de execução penal pós-trânsito em julgado, sendo estranho à fase processual do recebimento da acusação.",
+      "Os embargos infringentes possuem cabimento exclusivo em sede de recurso contra decisões não unânimes de tribunais, nos termos da legislação processual.",
+      "Resposta correta. O artigo 581, inciso I, do CPP estabelece expressamente o Recurso em Sentido Estrito para impugnar a decisão que rejeitar a denúncia ou a queixa.",
+      "A apelação é destinada precipuamente ao combate de sentenças definitivas de mérito ou decisões terminativas não enquadradas no rol do recurso em sentido estrito."
+    ]
+  },
+  {
+    q: "Após a apresentação da resposta à acusação no rito ordinário, o magistrado reconheceu expressamente a presença de uma causa excludente da ilicitude do fato com base no art. 397, inciso I, do CPP, absolvendo sumariamente o acusado. Contra essa decisão de absolvição sumária, qual é o recurso adequado e onde ele está previsto?",
+    options: [
+      "Recurso em Sentido Estrito, previsto no art. 581, inciso VIII, do CPP.",
+      "Recurso de Apelação, previsto no art. 593, inciso I, do CPP.",
+      "Habeas Corpus, haja vista tratar-se de decisão que encerra o processo sem análise do mérito.",
+      "Agravo de Instrumento, por analogia ao Código de Processo Civil."
+    ],
+    correct: 1,
+    explanations: [
+      "Não é bem isso. O Recurso em Sentido Estrito prevê o combate à absolvição sumária apenas quando fundada no inciso IV (extinção da punibilidade), conforme a regra do art. 581, VIII, do CPP.",
+      "Resposta correta. Nos termos do art. 593, inciso I, do CPP, a absolvição sumária fundamentada nos incisos I, II e III do art. 397 constitui sentença de mérito impugnável por apelação.",
+      "O habeas corpus é uma ação constitucional de impugnação, não possuindo a natureza de recurso ordinário interponível contra sentenças definitivas de absolvição.",
+      "O processo penal contempla o sistema recursal próprio, não aplicando o agravo de instrumento do CPC para decisões terminativas de absolvição."
+    ]
+  },
+  {
+    type: "multi",
+    q: "Quanto às diferenças procedimentais entre o rito comum ordinário e o rito comum sumário previstos no CPP, assinale as características exclusivas ou distintivas do rito sumário.",
+    options: [
+      "Inexiste a fase de requerimento de diligências prevista no art. 402 do CPP.",
+      "O prazo para a realização da audiência de instrução e julgamento é reduzido para 30 dias.",
+      "A defesa inicial deve ser apresentada no prazo de 5 dias, diferentemente dos 10 dias previstos no rito ordinário.",
+      "O número máximo de testemunhas que cada parte pode arrolar é de até 5 testemunhas por réu/fato."
+    ],
+    correct: [0, 1, 3],
+    explanations: [
+      "Correta. No rito sumário não há a fase do art. 402 (requerimento de diligências) existente no ordinário.",
+      "Correta. No rito sumário a audiência de instrução e julgamento deve realizar-se no prazo de 30 dias.",
+      "Incorreta. A resposta à acusação no rito sumário também é de 10 dias (art. 396 c/c 531 e ss.), e não de 5 dias.",
+      "Correta. No rito sumário cada parte pode arrolar até 5 testemunhas (art. 532 do CPP)."
+    ]
+  },
+  {
+    q: "Nos crimes contra a honra regidos pelo rito especial previsto nos arts. 519 a 523 do CPP (quando não aplicável a Lei nº 9.099/95), qual ato procedimental específico precede o recebimento da queixa nas ações penais de iniciativa privada?",
+    options: [
+      "Notificação do Ministério Público para oferecimento obrigatório de transação penal.",
+      "Remessa dos autos ao Tribunal de Justiça para julgamento da exceção da verdade antes da instrução.",
+      "Realização de uma audiência prévia de conciliação ou reconciliação entre as partes na presença de seus advogados.",
+      "Citação pessoal do querelado para prestar depoimento prévio em juízo sob pena de revelia."
+    ],
+    correct: 2,
+    explanations: [
+      "Não é bem isso. A transação penal é um instituto despenalizador de infrações de menor potencial ofensivo, não se confundindo com o rito especial de reconciliação do art. 520 do CPP.",
+      "A exceção da verdade é apresentada no prazo da resposta à acusação após o recebimento da peça inicial, e não antes da instrução ou da audiência de conciliação.",
+      "Resposta correta. O artigo 520 do CPP prevê a audiência de reconciliação como etapa prévia e obrigatória antes do recebimento da queixa nas ações penais privadas por crimes contra a honra.",
+      "A citação pessoal para formar a relação processual só ocorre após o recebimento formal da acusação, etapa posterior à fase prévia reconciliatória."
+    ]
+  },
+  {
+    type: "multi",
+    q: "Sobre o instituto da Transação Penal, regulado pelo art. 76 da Lei nº 9.099/95 e aplicável às infrações de menor potencial ofensivo, selecione as proposições corretas.",
+    options: [
+      "A homologação da transação penal gera efeitos de reincidência e registro de maus antecedentes na folha do acusado.",
+      "A sua concessão impede o oferecimento de novo benefício análogo pelo prazo de 5 anos.",
+      "É um ato bilateral que requer a aceitação expressa do autor do fato e de seu defensor.",
+      "O descumprimento das cláusulas pactuadas na transação penal homologada permite ao Ministério Público retomar o curso da persecução penal e oferecer denúncia."
     ],
     correct: [1, 2, 3],
     explanations: [
-      "Incorreta. O descumprimento da transação penal não gera automaticamente reincidência nem maus antecedentes; o processo segue seu curso normal.",
-      "Correta. A composição civil homologada em ação privada equivale à renúncia e extingue a punibilidade.",
-      "Correta. A transação penal aplica-se a infrações de menor potencial ofensivo (pena máxima até 2 anos).",
-      "Correta. A suspensão condicional do processo (art. 89 da Lei 9.099/95) exige pena mínima igual ou inferior a 1 ano."
+      "Incorreta. A homologação da transação penal não gera reincidência nem maus antecedentes.",
+      "Correta. Após a concessão, não se oferece novo benefício análogo pelo prazo de 5 anos.",
+      "Correta. A transação penal é ato bilateral e exige aceitação do autor do fato e de seu defensor.",
+      "Correta. O descumprimento autoriza o MP a retomar a persecução e oferecer denúncia."
     ]
   },
   {
-    q: "Por que a Súmula 453 do Supremo Tribunal Federal veda a aplicação do instituto da mutatio libelli (art. 384 do CPP) em segundo grau de jurisdição?",
+    q: "O instituto da Suspensão Condicional do Processo (art. 89 da Lei nº 9.099/95) exige a presença de requisitos específicos quanto às penas abstratamente cominadas ao crime. Qual é o limite de pena exigido por lei para a sua aplicabilidade?",
     options: [
-      "Porque a mutatio libelli só pode ser aplicada pelo Ministério Público, e não pelo tribunal.",
-      "Para evitar a supressão de instância e a violação aos princípios do contraditório e da ampla defesa, já que a inclusão de fato novo exige aditamento e dilação probatória na primeira instância.",
-      "Porque o segundo grau só pode aplicar a emendatio libelli, nunca a mutatio.",
-      "Porque a Súmula 453 trata apenas de citação por edital e não de mutatio libelli."
+      "A pena máxima cominada ao delito não pode ultrapassar 2 anos.",
+      "A pena máxima cominada ao delito deve ser inferior a 4 anos e a mínima superior a 1 ano.",
+      "A pena privativa de liberdade cominada deve ser cumulativa com sanção restritiva de direitos de até 6 meses.",
+      "A pena mínima cominada ao delito deve ser igual ou inferior a 1 ano."
     ],
-    correct: 1,
+    correct: 3,
     explanations: [
-      "A vedação não se funda na legitimidade exclusiva do MP, mas na necessidade de contraditório e instrução em primeiro grau.",
-      "Resposta correta. A alteração dos fatos narrados na acusação exige a reabertura do contraditório e da instrução processual, o que não pode ser realizado diretamente em sede recursal sem violar o duplo grau de jurisdição.",
-      "Embora a emendatio seja possível em segundo grau em certas hipóteses, a razão da Súmula 453 é a proteção do contraditório e do duplo grau.",
-      "A Súmula 453 do STF trata especificamente da mutatio libelli em segundo grau."
-    ]
-  },
-  {
-    q: "De acordo com o entendimento sumulado pelo Supremo Tribunal Federal (Súmula 351), qual é a consequência jurídica da citação realizada por edital quando o réu estiver preso na mesma unidade da federação em que tramita o processo?",
-    options: [
-      "A citação é nula, devendo o acusado ser citado pessoalmente na unidade prisional.",
-      "A citação é plenamente válida se esgotadas as tentativas de localização no endereço residencial.",
-      "O processo deve ser suspenso sem declaração de nulidade, aplicando-se o art. 366 do CPP.",
-      "A citação editalícia é convertida automaticamente em citação por hora certa pela secretaria do juízo."
-    ],
-    correct: 0,
-    explanations: [
-      "Resposta correta. Estando o réu sob custódia do Estado na mesma unidade federativa, a citação ficta por edital é inválida pela exigência da citação pessoal.",
-      "Não é bem isso. O fato de o réu estar preso sob o controle do próprio Estado invalida a alegação de paradeiro ignorado ou incerto para fins de citação ficta.",
-      "A suspensão do art. 366 exige a validade da citação por edital de quem não é encontrado; caso o réu esteja preso na mesma unidade, a citação editalícia é nula.",
-      "A citação por hora certa pressupõe ocultação dolosa do réu solto, não se aplicando ao réu preso que deve ser citado pessoalmente."
-    ]
-  },
-  {
-    q: "Quando o réu é citado pessoalmente e, de forma injustificada, deixa de apresentar resposta à acusação ou de comparecer aos atos processuais, ocorre a inatividade processual real, gerando a situação de ________, em que o processo prossegue com o defensor sem novas intimações ao réu. Qual termo completa a lacuna?",
-    options: [
-      "revelia",
-      "ausência",
-      "contumácia absoluta",
-      "deserção"
-    ],
-    correct: 1,
-    explanations: [
-      "No processo penal não se aplica a revelia nos mesmos moldes do processo civil; o termo técnico usual é ausência.",
-      "Resposta correta. A ausência ocorre quando o réu validamente citado pessoalmente opta por não exercer o direito de presença, prosseguindo o feito com a defesa sem paralisar o processo.",
-      "Contumácia é expressão mais comum em outros contextos; o termo consagrado para a situação descrita é ausência.",
-      "Deserção refere-se ao abandono de recurso, não à inatividade do réu citado."
-    ]
-  },
-  {
-    q: "No procedimento do Tribunal do Júri, a decisão de impronúncia (art. 414 do CPP) ocorre quando o juiz não se convence da materialidade do fato ou da existência de indícios suficientes de autoria. Qual é a natureza dessa decisão e o recurso cabível para sua impugnação?",
-    options: [
-      "É uma sentença definitiva de mérito que faz coisa julgada material, impugnável por recurso em sentido estrito.",
-      "É uma decisão terminativa que encerra o processo sem julgamento de mérito, impugnável por apelação.",
-      "É uma decisão interlocutória mista não terminativa, impugnável por recurso em sentido estrito.",
-      "É um despacho irrecorrível que determina o arquivamento definitivo da ação penal."
-    ],
-    correct: 1,
-    explanations: [
-      "A impronúncia não julga o mérito e não faz coisa julgada material, pois novas provas podem fundamentar nova denúncia enquanto não extinta a punibilidade.",
-      "Resposta correta. A impronúncia encerra a fase do juízo de acusação sem formar coisa julgada material, sendo atacável pelo recurso de apelação nos termos do art. 416 do CPP.",
-      "Não é bem isso. A decisão interlocutória mista não terminativa corresponde à pronúncia (art. 413), e não à impronúncia que efetivamente encerra o processo.",
-      "A impronúncia possui nítido cunho decisório e admite a interposição de recurso de apelação por parte da acusação."
+      "Não é bem isso. O limite de pena máxima não superior a 2 anos define a infração de menor potencial ofensivo para fins de transação penal e competência do JECrim, e não para a suspensão do processo.",
+      "A lei exige unicamente a verificação do limite inferior da sanção (pena mínima ≤ 1 ano), sendo irrelevante a pena máxima ser superior a 4 anos.",
+      "A modalidade de sanção (restritiva ou privativa) ou a imposição de cumulatividade não integram o requisito objetivo de admissibilidade fixado pelo art. 89 da Lei 9.099/95.",
+      "Resposta correta. O artigo 89 da Lei nº 9.099/95 estabelece a pena mínima igual ou inferior a 1 ano como pressuposto objetivo para a oferta da suspensão condicional do processo."
     ]
   },
   {
     type: "multi",
-    q: "Durante os debates orais na sessão de julgamento do Tribunal do Júri, o art. 478 do CPP veda a referência a determinados atos e elementos processuais para evitar a indução indevida dos jurados. Quais dos itens a seguir são alvos dessa proibição legal?",
+    q: "Ao encerrar a primeira fase do procedimento do Tribunal do Júri (judicium accusationis), o magistrado pode proferir diferentes tipos de decisões. Quais das seguintes afirmativas sobre essas decisões estão corretas?",
     options: [
-      "Ao silêncio do acusado ou à ausência de seu interrogatório por falta de requerimento.",
-      "À decisão de pronúncia e às decisões posteriores que a julgaram admissível.",
-      "Ao uso de algemas pelo acusado durante a sessão de julgamento.",
-      "Aos depoimentos prestados pelas testemunhas de acusação na primeira fase do procedimento."
+      "A decisão de pronúncia é uma decisão interlocutória mista não terminativa que exige a demonstração da materialidade e indícios suficientes de autoria ou participação.",
+      "Da decisão de impronúncia, que encerra o processo sem julgamento de mérito por falta de indícios suficientes, cabe o recurso de apelação.",
+      "A absolvição sumária no Júri (art. 415 do CPP) produz coisa julgada material e enseja a interposição de recurso de apelação.",
+      "A pronúncia faz coisa julgada material, impedindo a renovação da acusação ainda que surjam novas provas antes da extinção da punibilidade."
     ],
     correct: [0, 1, 2],
     explanations: [
-      "Correta. O art. 478 veda referência ao silêncio do acusado ou à ausência de interrogatório.",
-      "Correta. É vedada a referência à decisão de pronúncia e às que a confirmaram.",
-      "Correta. Também é vedada a referência ao uso de algemas pelo acusado.",
-      "Incorreta. Os depoimentos das testemunhas da primeira fase não estão na lista de vedações do art. 478 e podem ser referidos nos debates."
+      "Correta. A pronúncia é interlocutória mista não terminativa e exige materialidade + indícios de autoria.",
+      "Correta. Da impronúncia cabe apelação (art. 416 do CPP); ela não faz coisa julgada material.",
+      "Correta. A absolvição sumária do art. 415 produz coisa julgada material e é atacável por apelação.",
+      "Incorreta. A pronúncia não faz coisa julgada material; novas provas podem fundamentar nova denúncia enquanto não extinta a punibilidade (isso vale para a impronúncia)."
     ]
   },
   {
-    q: "Em conformidade com o princípio da correlação (ou congruência) no processo penal, qual é a limitação imposta ao juiz no momento de proferir a sentença penal?",
+    q: "Caso o juiz sumariante, ao final da primeira fase do Júri, redefina a qualificação jurídica do fato e conclua pela existência de um crime que não seja de competência do Tribunal do Júri (ex.: desclassificação de tentativa de homicídio para lesão corporal), como se classifica essa decisão e qual é o recurso cabível?",
     options: [
-      "O juiz pode condenar por fato diverso desde que a pena seja menor ou igual à do crime imputado.",
-      "A sentença deve ficar estritamente demarcada pelos fatos e pedidos narrados na peça acusatória, impedindo condenação por fatos não alegados.",
-      "O juiz está livre para alterar a capitulação e os fatos conforme sua livre convicção, sem necessidade de aditamento.",
-      "O princípio da correlação só se aplica às ações penais privadas, não às públicas."
+      "Trata-se de desclassificação própria, cabendo contra ela Recurso em Sentido Estrito (art. 581, II, do CPP).",
+      "Trata-se de decisão de impronúncia motivada, sendo atacável apenas por Carta Testemunhal.",
+      "Trata-se de absolvição sumária imprópria, cuja impugnação exige a interposição de Embargos Declaratórios.",
+      "Trata-se de desclassificação imprópria, atacável mediante Recurso de Apelação (art. 593, I, do CPP)."
     ],
-    correct: 1,
+    correct: 0,
     explanations: [
-      "Mesmo com pena menor, o juiz não pode condenar por fato diverso sem observar a mutatio ou emendatio nos termos legais.",
-      "Resposta correta. O princípio da correlação determina que a sentença do magistrado deve ficar estritamente demarcada pelos fatos e pedidos narrados na peça acusatória.",
-      "A alteração de fatos exige mutatio libelli com aditamento; a mera mudança de capitulação pode ocorrer via emendatio.",
-      "O princípio da correlação aplica-se a todas as ações penais, públicas e privadas."
+      "Isso mesmo! Quando o juiz afasta a competência do Tribunal do Júri ao desclassificar o delito para infração comum, opera-se a desclassificação própria, contra a qual cabe RSE (art. 581, II, CPP).",
+      "A desclassificação modifica a competência do julgador e remete os autos ao juízo competente, não se confundindo com a impronúncia.",
+      "A decisão desclassificatória não constitui absolvição sumária, pois não atesta a inexistência do fato ou excludente, mas apenas remete o feito ao juízo adequado.",
+      "A desclassificação imprópria ocorre quando a nova definição jurídica mantém o crime sob a competência do Júri, gerando pronúncia impugnável por RSE (art. 581, IV, CPP)."
     ]
   },
   {
-    q: "No rito comum ordinário (aplicável a crimes com pena máxima igual ou superior a 4 anos), qual é o prazo legal e o momento processual correto para a defesa apresentar a resposta à acusação e arrolar suas testemunhas?",
+    q: "Na sessão de julgamento do Tribunal do Júri em plenário, qual é o número mínimo de jurados sorteados que devem comparecer para que a sessão seja instalada, e quantos comporão o Conselho de Sentença?",
     options: [
-      "Prazo de 5 dias, contado do recebimento da denúncia pelo juiz.",
-      "Prazo de 10 dias, logo após a citação válida do réu.",
-      "Prazo de 30 dias, imediatamente antes da realização da audiência de instrução e julgamento.",
-      "Prazo de 15 dias, a ser apresentado oralmente na audiência preliminar."
+      "Mínimo de 18 jurados para instalação e 7 para a composição do Conselho de Sentença.",
+      "Mínimo de 25 jurados para instalação e 12 para a composição do Conselho de Sentença.",
+      "Mínimo de 15 jurados para instalação e 7 para a composição do Conselho de Sentença.",
+      "Mínimo de 10 jurados para instalação e 5 para a composição do Conselho de Sentença."
     ],
-    correct: 1,
+    correct: 2,
     explanations: [
-      "O prazo de 5 dias refere-se ao oferecimento da denúncia para réu preso, e não ao prazo da resposta defensiva após a citação.",
-      "Isso mesmo! Nos termos do art. 396-A do CPP, a resposta à acusação deve ser oferecida em 10 dias a contar da citação, sendo o momento para arrolar testemunhas e arguir exceções.",
-      "O prazo de 30 dias refere-se ao limite para a realização da audiência no rito sumário, não guardando relação com a peça defensiva inicial.",
-      "A resposta à acusação no rito ordinário é escrita e possui prazo de 10 dias, diferindo dos ritos dos juizados."
+      "Não é bem isso. Embora o número de jurados no Conselho seja 7, o quórum legal mínimo de instalação estabelecido no CPP é de 15 jurados, e não 18.",
+      "São convocados 25 jurados no total, mas o quórum de instalação é de 15 e o Conselho de Sentença compõe-se de apenas 7 jurados.",
+      "Resposta correta. O artigo 463 do CPP exige o comparecimento mínimo de 15 jurados para a instalação dos trabalhos, sendo 7 deles sorteados para compor o Conselho de Sentença.",
+      "O número de 10 jurados é insuficiente para a instalação da sessão de julgamento e 5 não atingem a composição exigida por lei para o Conselho."
     ]
   },
   {
-    q: "A imutabilidade da decisão judicial que decorre unicamente da irrecorribilidade ou da preclusão dos prazos processuais, sem que tenha ocorrido o efetivo julgamento de mérito da causa penal, é denominada coisa julgada ________. Qual termo completa a lacuna?",
+    q: "Durante os debates orais na sessão plenária do Tribunal do Júri, as partes estão sujeitas a certas vedações legais previstas no art. 478 do CPP, sob pena de nulidade. Qual das alternativas apresenta uma conduta proibida durante a argumentação perante os jurados?",
     options: [
-      "material",
-      "formal",
-      "soberana",
-      "absoluta"
+      "Ler trecho de depoimento prestado por testemunha colhido por meio de carta precatória.",
+      "Fazer referência à decisão de pronúncia ou às decisões posteriores que a confirmaram como argumento de autoridade.",
+      "Utilizar projeção de slides contendo a transcrição das declarações da vítima prestadas em juízo.",
+      "Mencionar a antecedência da juntada de documento que foi inserido nos autos com 5 dias úteis de antecedência."
     ],
     correct: 1,
     explanations: [
-      "A coisa julgada material exige o julgamento de mérito e impede a rediscussão da questão em outro processo.",
-      "Resposta correta. A coisa julgada formal opera a imutabilidade apenas dentro do processo (imutabilidade interna) por esgotamento dos recursos, sem impedir a reapreciação se não houver mérito julgado.",
-      "Coisa julgada soberana é expressão usada em alguns contextos para a imutabilidade plena, mas o termo técnico para a hipótese descrita é coisa julgada formal.",
-      "Não há designação técnica de 'coisa julgada absoluta' no sentido da distinção formal/material."
+      "Não é bem isso. A leitura de depoimentos colhidos via carta precatória é expressamente permitida na instrução em plenário nos termos do art. 473, § 3º, do CPP.",
+      "Resposta correta. O art. 478, inciso I, do CPP proíbe expressamente que as partes façam referência à pronúncia ou às decisões posteriores que a confirmaram, sob pena de nulidade.",
+      "É franqueada às partes a utilização de recursos visuais ou leitura de depoimentos constantes dos autos durante os debates, desde que não violem vedações específicas do art. 478.",
+      "A menção a documentos regularmente juntados no prazo legal mínimo de 3 dias úteis (art. 479 do CPP) é perfeitamente válida no Plenário."
     ]
   }
 ];
