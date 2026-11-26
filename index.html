@@ -373,428 +373,438 @@
 // ===================== QUESTÕES PADRÃO =====================
 const DEFAULT_QUESTIONS = [
   {
-    q: "Durante o curso de uma ação penal sob o rito comum ordinário, a defesa impetrou habeas corpus contra a decisão do magistrado de piso que recebeu a denúncia ofertada pelo Ministério Público, alegando ausência de justa causa. Sob o ponto de vista da classificação das decisões judiciais e do sistema recursal no CPP, qual a natureza jurídica desse ato decisório e o motivo do manejo da ação impugnativa?",
+    q: "Em uma reunião no âmbito da Administração Pública federal, identificou-se que um determinado processo exige a participação concomitante de três ministérios para solucionar controvérsias e conferir maior celeridade. Contudo, o objeto central do feito é a instauração de procedimento punitivo para apurar infrações e aplicar sanções administrativas a uma concessionária de serviços públicos. Com base na Lei nº 9.784/99, como a Administração deve proceder em relação à adoção do instituto da decisão coordenada?",
     options: [
-      "É uma sentença interlocutória mista terminativa, razão pela qual o recurso cabível seria a apelação, sendo o habeas corpus apenas um substitutivo recursal.",
-      "Trata-se de decisão interlocutória, a qual gera gravame à parte e não comporta recurso próprio previsto em lei, fundamentando o cabimento da ação impugnativa autônoma.",
-      "É uma decisão interlocutória mista não terminativa, sendo atacável originariamente por recurso em sentido estrito (RSE) com base no art. 581 do CPP.",
-      "Tratando-se de ato de mero expediente, é irrecorrível de forma absoluta, cabendo o habeas corpus apenas por construção doutrinária sem previsão de gravame."
-    ],
-    correct: 1,
-    explanations: [
-      "Não é bem isso. O recebimento da denúncia não encerra a fase procedimental ou o processo, não se classificando como sentença mista terminativa nem desafiando apelação.",
-      "Resposta correta. As decisões interlocutórias possuem caráter decisório e gravame, mas, por falta de previsão legal de recurso genérico no CPP contra o recebimento da denúncia, admite-se a utilização de ações de impugnação como o habeas corpus.",
-      "O artigo 581 do CPP prevê RSE para a rejeição da denúncia ou queixa, mas não estabelece recurso contra a decisão que a recebe.",
-      "Despachos de mero expediente não possuem cunho decisório nem geram gravame, enquanto o recebimento da denúncia possui mínimo caráter decisório e causa prejuízo à parte."
-    ]
-  },
-  {
-    q: "Em uma sentença penal condenatória, o juiz fundamentou devidamente a autoria e a materialidade delitiva, mas deixou de analisar a tese defensiva de legítima defesa apresentada em sede de alegações finais. Com base na estrutura da sentença penal e nas exigências constitucionais e legais de fundamentação, qual o vício presente no provimento jurisdicional?",
-    options: [
-      "Nulidade absoluta por violação da motivação, haja vista o dever constitucional de enfrentar a totalidade das teses acusatórias e defensivas.",
-      "Mera irregularidade formal no relatório, passível de simples correção de ofício pelo magistrado após o trânsito em julgado.",
-      "Anulabilidade relativa, que exige a comprovação de prejuízo pela defesa somente em sede de Revisão Criminal.",
-      "Ausência de justa causa no dispositivo da sentença, ensejando a mutatio libelli automática no tribunal de segundo grau."
-    ],
-    correct: 0,
-    explanations: [
-      "Isso mesmo! A motivação é o ponto nevrálgico da sentença e exige o enfrentamento integral das teses das partes, sob pena de nulidade insanável da decisão nos termos do art. 315, § 2º, e art. 381 do CPP.",
-      "O não enfrentamento de tese defensiva afeta a motivação e a validade substancial do provimento, constituindo vício grave de nulidade e não mera falha no relatório.",
-      "A ausência de apreciação das teses defensivas vulnera a ampla defesa e a motivação das decisões, acarretando nulidade que pode e deve ser arguida na via recursal ordinária.",
-      "A justa causa é condição da ação apreciada no recebimento ou rejeição da inicial, enquanto a falta de análise de tese na motivação invalida a própria sentença por vício de fundamentação."
-    ]
-  },
-  {
-    type: "multi",
-    q: "Sobre a aplicação da emendatio libelli (art. 383 do CPP) no processo penal brasileiro e suas repercussões doutrinárias e constitucionais, quais das assertivas a seguir refletem adequadamente o instituto?",
-    options: [
-      "Quando o afastamento de uma elementar por ausência de prova enseja a condenação por crime residual decomponível, não há necessidade de aditamento ou nova instrução.",
-      "Exige obrigatoriamente o aditamento da denúncia ou queixa pelo Ministério Público no prazo de 5 dias sempre que acarretar alteração da pena.",
-      "A doutrina crítica aponta que a aplicação direta da emendatio libelli na sentença sem consulta prévia às partes pode vulnerar os princípios do contraditório e da ampla defesa.",
-      "Permite ao magistrado atribuir definição jurídica diversa dos fatos narrados na acusação no momento da sentença, ainda que isso resulte na aplicação de pena mais grave."
-    ],
-    correct: [0, 2, 3],
-    explanations: [
-      "Correta. Na emendatio, os fatos permanecem os mesmos; se a elementar não se prova e resta crime residual, não há mutatio nem aditamento.",
-      "Incorreta. O aditamento obrigatório no prazo de 5 dias é da mutatio libelli (art. 384), não da emendatio.",
-      "Correta. Parte da doutrina critica a emendatio na sentença sem prévio contraditório, por risco à ampla defesa.",
-      "Correta. A emendatio permite nova definição jurídica dos mesmos fatos, inclusive com pena mais grave, sem aditamento."
-    ]
-  },
-  {
-    q: "Durante o julgamento de apelação criminal interposta pela defesa, a Turma Julgadora do Tribunal de Justiça constatou a existência de uma circunstância elementar não contida na denúncia, provada ao longo da instrução de primeiro grau. Diante disso, os desembargadores pretendem aplicar o procedimento da mutatio libelli (art. 384 do CPP). À luz da jurisprudência sumulada do Supremo Tribunal Federal, como deve proceder o Tribunal?",
-    options: [
-      "Pode proceder à mutatio libelli diretamente no acórdão, desde que a nova capitulação reduza a pena final do acusado.",
-      "É permitida a mutatio libelli apenas se o Ministério Público de primeiro grau tiver feito o pedido expressamente nas razões de apelação.",
-      "Deve converter o julgamento em diligência para que o Procurador de Justiça adite a denúncia no prazo de 5 dias em segundo grau.",
-      "É vedada a aplicação da mutatio libelli em segundo grau de jurisdição, sob pena de supressão de instância e violação do contraditório."
-    ],
-    correct: 3,
-    explanations: [
-      "Não é bem isso. A vedação sumulada impede qualquer alteração decorrente de fato novo em segundo grau, independentemente de beneficiar ou prejudicar o réu.",
-      "O obstáculo sumulado reside no impedimento de inovar a imputação fática no tribunal, mesmo que haja provocação acusatória.",
-      "A vedação da Súmula 453 do STF impede o próprio aditamento em segundo grau para incluir fato novo não contido na inicial acusatória.",
-      "Resposta correta. A Súmula 453 do STF estabelece expressamente que não se aplica a mutatio libelli em segundo grau, preservando o duplo grau e o contraditório."
-    ]
-  },
-  {
-    q: "Ao apresentar alegações finais no rito ordinário, o Ministério Público requereu a absolvição do réu por insuficiência de provas. O magistrado, contudo, proferiu sentença condenatória com base no art. 385 do CPP. De acordo com a doutrina processualista moderna fundada no sistema acusatório constitucional, qual a crítica central a essa atuação judicial?",
-    options: [
-      "A condenação sem pedido do titular da ação penal viola os princípios acusatório, da imparcialidade e da correlação entre acusação e sentença.",
-      "O julgamento é válido, pois o princípio do in dubio pro societate obriga o juiz a condenar sempre que o órgão acusador abdicar da pretensão punitiva.",
-      "A atuação do magistrado é inatacável, porque a ação penal pública torna-se indisponível e irretratável até o trânsito em julgado.",
-      "A sentença é nula apenas se a defesa não tiver tido a oportunidade de apresentar memoriais após a manifestação absolutória do Parquet."
-    ],
-    correct: 0,
-    explanations: [
-      "Isso mesmo! Quando o titular da ação retira o pedido condenatório, o juiz fica impedido de prover além da pretensão existente, sob pena de atuar como acusador de ofício.",
-      "O princípio acusatório exige a separação das funções de acusar e julgar, não havendo dever de condenação pautado em in dubio pro societate.",
-      "Embora a ação pública seja indisponível quanto ao seu ajuizamento, a manifestação opinativa do MP no mérito delimita o quadro cognitivo sobre o qual o juiz pode decidir favoravelmente à condenação.",
-      "A nulidade decorre do vício constitucional da ausência de pretensão acusatória ativa ao tempo do julgamento, extrapolando o simples contraditório formal."
-    ]
-  },
-  {
-    type: "multi",
-    q: "No âmbito do direito processual penal, a coisa julgada desempenha papel fundamental na estabilização das relações jurídicas. Considerando as diferenças entre coisa julgada formal e material, selecione as proposições corretas:",
-    options: [
-      "A coisa julgada material impede a propositura de nova ação penal pelo mesmo fato e projeta seus efeitos para fora do processo.",
-      "A sentença penal condenatória faz coisa julgada soberana e plena, não admitindo qualquer desconstituição ou modificação posterior após o trânsito em julgado.",
-      "Decisões que encerram o processo sem julgamento do mérito produzem coisa julgada formal, mas não impedem a reapresentação da matéria se sanado o vício e não extinta a punibilidade.",
-      "A coisa julgada formal representa a imutabilidade interna da decisão decorrente da preclusão ou irrecorribilidade, constituindo pré-requisito para a formação da coisa julgada material."
-    ],
-    correct: [0, 2, 3],
-    explanations: [
-      "Correta. A coisa julgada material tem efeito externo e impede nova ação pelo mesmo fato.",
-      "Incorreta. A sentença condenatória admite revisão criminal e outras vias de desconstituição em hipóteses legais.",
-      "Correta. Sem mérito julgado há só coisa julgada formal; sanado o vício e ainda punível o fato, pode haver nova ação.",
-      "Correta. A coisa julgada formal é a imutabilidade interna e pré-requisito da material."
-    ]
-  },
-  {
-    q: "Um réu que se encontrava custodiado preventivamente na mesma unidade federativa onde tramitava a ação penal foi citado por edital após o oficial de justiça não o localizar em seu endereço residencial. Diante dessa situação fática, qual o posicionamento pacificado na Súmula 351 do Supremo Tribunal Federal acerca da validade desse ato citatório?",
-    options: [
-      "O ato citatório por edital é válido, mas gera a suspensão automática do processo e da prescrição com base no art. 366 do CPP.",
-      "É nula a citação por edital de réu preso na mesma unidade federativa em que tramita o processo.",
-      "A citação por edital é plenamente válida, tendo em vista que a citação ficta supre a falta de localização do réu no endereço constante dos autos.",
-      "Trata-se de hipótese de inatividade processual real que autoriza o prosseguimento do feito sem a nomeação de defensor dativo."
-    ],
-    correct: 1,
-    explanations: [
-      "Não é bem isso. Sendo nula a citação editalícia realizada indevidamente, o processo não pode ter o vício convalidado com a simples suspensão do art. 366.",
-      "Resposta correta. A Súmula 351 do STF prescreve a nulidade da citação editalícia quando o acusado está custodiado no mesmo ente federativo do juízo.",
-      "Estando o réu preso no mesmo estado, cabe ao Poder Público localizá-lo e citá-lo pessoalmente, sendo inviável a citação ficta.",
-      "A ausência de citação pessoal hígida impede o desenvolvimento válido do processo e não autoriza o andamento sem defesa técnica adequada."
-    ]
-  },
-  {
-    q: "Em relação à inatividade processual ficta decorrente do desconhecimento do paradeiro do réu citado por edital (art. 366 do CPP), surgem controvérsias quanto ao limite temporal da suspensão da prescrição. Compare os entendimentos do Supremo Tribunal Federal (STF) e do Superior Tribunal de Justiça (STJ - Súmula 415) sobre o tema:",
-    options: [
-      "O STJ determina a extinção imediata da punibilidade se o réu não for encontrado em 5 anos, enquanto o STF manda arquivar os autos definitivamente.",
-      "Ambas as Cortes Superiores convergem no sentido de que a prescrição nunca se suspende na citação por edital, correndo o prazo prescricional normalmente.",
-      "O STF entende que a suspensão da prescrição deve ser limitada ao prazo prescricional do crime, enquanto o STJ considera constitucional a suspensão indefinida.",
-      "O STF considera constitucional a suspensão indefinida do processo e da prescrição, ao passo que o STJ (Súmula 415) limita o tempo de suspensão da prescrição ao prazo regulado pela pena máxima cominada ao delito."
-    ],
-    correct: 3,
-    explanations: [
-      "Não é bem isso. Nenhuma das cortes aplica extinção imediata ou arquivamento definitivo sem observar os prazos prescricionais legais da pena do crime.",
-      "O artigo 366 do CPP estabelece expressamente a suspensão da prescrição, sendo o debate focado apenas na duração máxima dessa suspensão.",
-      "A posição das cortes é a inversa: o STF admite a suspensão indefinida da prescrição e o STJ estabelece o limite com base na pena máxima.",
-      "Resposta correta. O STJ pacificou que a suspensão da prescrição não pode ser eterna, devendo fluir novamente após transcorrido o prazo prescricional calculado pela pena máxima."
-    ]
-  },
-  {
-    type: "multi",
-    q: "Os ritos comuns ordinário e sumário compartilham a estrutura básica de processamento, mas apresentam diferenças normativas expressas no Código de Processo Penal. Assinale as afirmativas que indicam corretamente distinções operacionais entre o rito ordinário e o rito sumário:",
-    options: [
-      "No rito ordinário cada parte pode arrolar até 8 testemunhas por réu/fato, ao passo que no rito sumário esse limite é reduzido para até 5 testemunhas.",
-      "O rito ordinário aplica-se a crimes com pena máxima cominada igual ou superior a 4 anos, enquanto o rito sumário destina-se a infrações com pena máxima inferior a 4 anos e superior a 2 anos.",
-      "O prazo legal máximo para a realização da audiência de instrução e julgamento é de 60 dias no rito ordinário e de 30 dias no rito sumário.",
-      "A fase de requerimento de diligências suplementares (art. 402 do CPP) ao final da audiência de instrução existe apenas no rito sumário."
-    ],
-    correct: [0, 1, 2],
-    explanations: [
-      "Correta. Ordinário: até 8 testemunhas; sumário: até 5.",
-      "Correta. Ordinário ≥ 4 anos; sumário < 4 e > 2 anos.",
-      "Correta. Prazos de AIJ: 60 dias (ordinário) e 30 dias (sumário).",
-      "Incorreta. A fase do art. 402 existe no rito ordinário, não no sumário."
-    ]
-  },
-  {
-    q: "Após a apresentação da resposta à acusação, o juiz prolata decisão absolvendo sumariamente o réu com fundamento no art. 397, inciso IV, do CPP (extinção da punibilidade). Inconformado, o Ministério Público pretende interpor recurso. Qual o recurso cabível contra essa decisão específica, em conformidade com o texto expressamente previsto no Código de Processo Penal?",
-    options: [
-      "Agravo em Execução, haja vista que a declaração de extinção da punibilidade é matéria afeta à execução penal.",
-      "Recurso em Sentido Estrito (art. 581, VIII, do CPP), por haver disposição expressa estipulando esse recurso quando a absolvição sumária for fundada na extinção da punibilidade.",
-      "Correição Parcial, por se tratar de decisão interlocutória simples que causa espoliação de fases procedimentais.",
-      "Recurso de Apelação (art. 593, I, do CPP), pois toda absolvição sumária do art. 397 constitui sentença definitiva de mérito."
-    ],
-    correct: 1,
-    explanations: [
-      "Não é bem isso. O agravo em execução aplica-se a decisões proferidas na fase de execução da pena, e não durante a fase de conhecimento do processo.",
-      "Resposta correta. A absolvição sumária fundada no art. 397, IV (extinção da punibilidade) atrai a incidência do art. 581, VIII, do CPP, impugnável por RSE.",
-      "A absolvição sumária é provimento jurisdicional de mérito com recurso próprio regulado em lei, descabendo a via correcional.",
-      "Embora os incisos I, II e III do art. 397 ensejem apelação, a hipótese do inciso IV possui previsão recursal específica no RSE."
-    ]
-  },
-  {
-    q: "Ao analisar a peça acusatória (denúncia) oferecida pelo Ministério Público, o magistrado verifica que os fatos descritos não contêm suporte probatório mínimo que justifique a deflagração da ação penal, rejeitando-a liminarmente por ausência de justa causa (art. 395, III, do CPP). Diante disso, qual o recurso adequado que o Ministério Público deve utilizar e a natureza dessa decisão?",
-    options: [
-      "Deve interpor Recurso em Sentido Estrito (art. 581, I, do CPP), tratando-se de decisão que rejeita a denúncia ou queixa.",
-      "Cabe Habeas Corpus com pedido liminar, tendo em vista a celeridade necessária para reverter o trancamento da ação.",
-      "Cabe Recurso de Apelação (art. 593, I, do CPP), pois a rejeição liminar põe fim ao processo com julgamento de mérito.",
-      "É irrecorrível no sistema do CPP, restando ao Parquet apenas impetrar Mandado de Segurança perante o Tribunal."
-    ],
-    correct: 0,
-    explanations: [
-      "Isso mesmo! O Código de Processo Penal prevê expressamente o cabimento do RSE contra a decisão interlocutória mista que rejeita a inicial acusatória.",
-      "O Ministério Público não se utiliza de Habeas Corpus para impugnar a rejeição de denúncia por ele ofertada; deve interpor o recurso cabível (RSE).",
-      "A rejeição da denúncia encerra o processo sem julgar o mérito da pretensão punitiva, sendo impugnável por RSE.",
-      "A rejeição da denúncia possui recurso próprio expressamente previsto na legislação processual penal (art. 581, I)."
-    ]
-  },
-  {
-    type: "multi",
-    q: "Na primeira fase do rito do Tribunal do Júri (iudicium accusationis), o juiz sumariante pode proferir decisão de desclassificação (arts. 418 e 419 do CPP). Em relação à distinção entre a desclassificação própria e a desclassificação imprópria nessa fase, selecione as opções corretas:",
-    options: [
-      "A desclassificação imprópria ocorre quando o juiz altera a tipificação fática, mas o delito resultante permanece sob a competência do Tribunal do Júri (ex.: de infanticídio para homicídio simples).",
-      "Na desclassificação própria proferida na 1ª fase, a decisão é impugnável mediante Recurso em Sentido Estrito com base no art. 581, II, do CPP.",
-      "Na desclassificação imprópria, o processo é imediatamente redistribuído para a Vara Criminal Comum, que julgará também os crimes conexos.",
-      "A desclassificação própria ocorre quando o juiz atribui uma definição jurídica ao fato que afasta a competência do Tribunal do Júri (ex.: de homicídio tentado para lesão corporal)."
-    ],
-    correct: [0, 1, 3],
-    explanations: [
-      "Correta. Na desclassificação imprópria o crime continua sob a competência do Júri.",
-      "Correta. Desclassificação própria na 1ª fase → RSE (art. 581, II).",
-      "Incorreta. Na desclassificação imprópria o feito permanece no Júri (pronúncia pelo novo tipo); a redistribuição ocorre na própria.",
-      "Correta. Desclassificação própria afasta a competência do Júri."
-    ]
-  },
-  {
-    q: "No Tribunal do Júri, após ser proferida a decisão de pronúncia pelo magistrado, o processo segue para a fase de julgamento em Plenário (iudicium causae). Durante os debates orais, o promotor de justiça lê o trecho da pronúncia no qual o juiz afirmava haver 'robustos indícios de dolo do acusado', utilizando a fala judicial como argumento de autoridade perante os jurados. Considerando a disciplina do art. 478 do CPP, qual a consequência jurídica dessa conduta?",
-    options: [
-      "Trata-se de nulidade relativa que exige a demonstração de prejuízo no momento da votação dos quesitos.",
-      "A referência à decisão de pronúncia como argumento de autoridade é expressamente vedada pelo art. 478 do CPP, sob pena de nulidade do julgamento em Plenário.",
-      "Enseja apenas a interrupção da fala do promotor e o desconto do tempo utilizado na réplica, sem afetar a validade da sessão.",
-      "O ato é totalmente hígido, pois a decisão de pronúncia é documento público que integra os autos e é entregue aos jurados."
-    ],
-    correct: 1,
-    explanations: [
-      "Não é bem isso. A vedação da referência à pronúncia como argumento de autoridade constitui proibição legal peremptória cuja violação gera nulidade do julgamento.",
-      "Resposta correta. O art. 478 proíbe menção à pronúncia ou decisões posteriores que a confirmem como argumento de autoridade para não influenciar indevidamente o Conselho de Sentença.",
-      "A violação do art. 478 atinge a própria imparcialidade dos jurados, ensejando a anulação da sessão de julgamento.",
-      "Embora recebam cópia da pronúncia, as partes não podem fazer menção a ela durante os debates como argumento de autoridade coercitivo."
-    ]
-  },
-  {
-    q: "Encerrada a primeira fase do procedimento do Júri, o magistrado proferiu decisão de impronúncia (art. 414 do CPP) por não se convencer da existência de indícios suficientes de autoria. Em relação à natureza jurídica e aos efeitos dessa decisão, assinale a alternativa correta:",
-    options: [
-      "É uma decisão interlocutória simples desafiada por Recurso em Sentido Estrito, que extingue imediatamente a punibilidade do acusado.",
-      "Trata-se de sentença de mérito que faz coisa julgada material, impedindo definitivamente qualquer renovação da ação penal.",
-      "É uma decisão não terminativa impugnável por agravo de instrumento, a qual obriga a remessa automática do crime conexo ao juiz presidente.",
-      "Trata-se de decisão terminativa sem julgamento de mérito, impugnável por apelação, que não produz coisa julgada material, permitindo nova denúncia se surgirem novas provas enquanto não extinta a punibilidade."
-    ],
-    correct: 3,
-    explanations: [
-      "Não é bem isso. A impronúncia desafia recurso de apelação (art. 416 do CPP) e não extingue a punibilidade.",
-      "A impronúncia é uma decisão terminativa sem julgamento de mérito, não fazendo coisa julgada material.",
-      "A impronúncia encerra o processo no júri e o recurso cabível é a apelação nos termos do artigo 416 do CPP.",
-      "Resposta correta. A impronúncia encerra a fase sem analisar o mérito; por isso não impede nova acusação fundamentada em provas novas enquanto for punível o fato."
-    ]
-  },
-  {
-    type: "multi",
-    q: "O artigo 478 do Código de Processo Penal veda às partes fazerem referências a determinados atos e fatos durante os debates no Plenário do Tribunal do Júri, sob pena de nulidade. Marque as hipóteses que estão abrangidas por essa proibição legal:",
-    options: [
-      "Ao silêncio do acusado ou à ausência de seu interrogatório por falta de requerimento, em seu prejuízo.",
-      "Às declarações prestadas pelas testemunhas de defesa durante a instrução em Plenário.",
-      "À decisão de pronúncia e às decisões posteriores que julgaram admissível a acusação, quando usadas como argumento de autoridade.",
-      "Ao uso de algemas pelo acusado, como argumento de culpabilidade ou periculosidade."
-    ],
-    correct: [0, 2, 3],
-    explanations: [
-      "Correta. Vedado usar o silêncio ou a ausência de interrogatório em prejuízo do acusado.",
-      "Incorreta. Depoimentos prestados em plenário podem ser referidos nos debates.",
-      "Correta. Vedada a referência à pronúncia como argumento de autoridade.",
-      "Correta. Vedada a referência ao uso de algemas como argumento de culpabilidade."
-    ]
-  },
-  {
-    q: "Um indivíduo foi denunciado pela prática de dois crimes de ameaça (art. 147 do CP, pena máxima de 6 meses cada) em concurso material. Sabendo que a pena máxima cominada a cada delito isolado é inferior a 2 anos, qual é o procedimento aplicável e a incidência das Súmulas 723 do STF e 243 do STJ na aferição da competência dos Juizados Especiais Criminais (JECrim)?",
-    options: [
-      "Transfere-se a competência para o Tribunal do Júri, pois o concurso material transforma delitos de menor potencial ofensivo em crimes dolosos contra a vida.",
-      "Afasta-se a competência do JECrim se a soma das penas máximas no concurso material exceder o limite de 2 anos, adotando-se o rito comum sumário ou ordinário conforme o resultado da soma.",
-      "O processo tramitará obrigatoriamente no JECrim, pois o parâmetro da pena máxima de 2 anos deve ser analisado sempre de forma isolada para cada crime, independentemente do concurso.",
-      "Mantém-se o rito sumaríssimo no JECrim, mas veda-se a proposta de transação penal por expressa proibição legal em caso de concurso delitivo."
-    ],
-    correct: 1,
-    explanations: [
-      "Não é bem isso. O Tribunal do Júri julga apenas crimes dolosos contra a vida e conexos, sem relação com o concurso material de ameaças.",
-      "Resposta correta. Por analogia às Súmulas 723 do STF e 243 do STJ, a soma das penas máximas no concurso de infrações que ultrapasse 2 anos desloca a competência do JECrim.",
-      "No concurso de crimes, somam-se as penas máximas ou aplica-se a fração de aumento para aferir a ultrapassagem do limite de 2 anos.",
-      "O descabimento do rito sumaríssimo decorre do extravasamento do teto de competência temporal e não de vedação genérica de institutos."
-    ]
-  },
-  {
-    type: "multi",
-    q: "A Lei nº 9.099/95 introduziu institutos despenalizadores aptos a mitigar a obrigatoriedade da ação penal. Quanto à Transação Penal (art. 76) e à Suspensão Condicional do Processo (art. 89), assinale as assertivas corretas:",
-    options: [
-      "A Suspensão Condicional do Processo é cabível para crimes cuja pena mínima cominada seja igual ou inferior a 1 ano, podendo ser proposta mesmo fora do âmbito do JECrim.",
-      "A aceitação da Transação Penal gera automaticamente reincidência e maus antecedentes registrados na folha de antecedentes do autor do fato.",
-      "A Transação Penal é aplicável a infrações cuja pena máxima não seja superior a 2 anos, dependendo de acordo bilateral, e sua concessão impede novo benefício idêntico pelo prazo de 5 anos.",
-      "O descumprimento injustificado das condições impostas na Transação Penal homologada permite ao Ministério Público retomar a persecução e oferecer denúncia."
-    ],
-    correct: [0, 2, 3],
-    explanations: [
-      "Correta. Suspensão condicional: pena mínima ≤ 1 ano; pode ser proposta também fora do JECrim.",
-      "Incorreta. Transação penal não gera reincidência nem maus antecedentes.",
-      "Correta. Transação: pena máxima ≤ 2 anos, bilateral, e impede novo benefício por 5 anos.",
-      "Correta. Descumprimento autoriza o MP a retomar a persecução e denunciar."
-    ]
-  },
-  {
-    q: "Nos crimes contra a honra de ação penal privada que não tramitam no Juizado Especial Criminal em virtude de concurso de crimes, o Código de Processo Penal prevê regras procedimentais especiais (arts. 519 a 523). Sobre a audiência prévia de conciliação (art. 520) e a apresentação da exceção da verdade, assinale a opção correta:",
-    options: [
-      "A ausência injustificada do querelante à audiência prévia de conciliação implica obrigatoriamente a decretação da revelia e a remessa dos autos ao Ministério Público.",
-      "A exceção da verdade é uma defesa arguida oralmente exclusivamente na fase de debates da audiência de instrução e julgamento.",
-      "Se o crime contra a honra for praticado contra o Presidente da República, o procedimento exige prévia audiência de conciliação presidida pelo Ministro da Justiça.",
-      "A fase prévia de reconciliação antecede a decisão sobre o recebimento da queixa e, se bem-sucedida, gera a extinção da punibilidade pela renúncia ao direito de queixa."
-    ],
-    correct: 3,
-    explanations: [
-      "Não é bem isso. A ausência injustificada do querelante sem representação por procurador com poderes específicos pode acarretar perempção da ação penal privada.",
-      "A exceção da verdade deve ser apresentada por escrito no prazo da resposta à acusação, abrindo-se oportunidade para contestação.",
-      "Nos crimes praticados contra a honra do Presidente da República, a ação penal pública condicionada depende de requisição do Ministro da Justiça, sem audiência de conciliação do art. 520.",
-      "Resposta correta. Nos termos do art. 520 do CPP, a conciliação realizada antes do recebimento da queixa extingue a punibilidade por renúncia."
-    ]
-  },
-  {
-    q: "A Lei nº 11.343/2006 (Lei de Tóxicos) possui um procedimento especial que prevê a resposta manifestada antes do recebimento da denúncia e o interrogatório do réu logo após o recebimento. Todavia, em razão da reforma processual de 2008 e do art. 394, § 5º, do CPP, pacificou-se a necessidade de adequação desse rito às garantias constitucionais. Qual a alteração procedimental imperativa no rito da Lei de Tóxicos decorrente dessa harmonização?",
-    options: [
-      "É vedada a concessão de absolvição sumária após a resposta, devendo o processo prosseguir obrigatoriamente até a sentença final.",
-      "O interrogatório do réu deve ser deslocado para ser o último ato da instrução probatória, em obediência à ampla defesa e ao contraditório.",
-      "Elimina-se a necessidade do laudo de constatação provisória de drogas, exigindo-se o laudo definitivo já no momento do oferecimento da denúncia.",
-      "Suprime-se a fase de defesa prévia anterior ao recebimento, aplicando-se estritamente o rito comum ordinário com citação inicial."
-    ],
-    correct: 1,
-    explanations: [
-      "Não é bem isso. A absolvição sumária também deve ser admitida após a fase de resposta para evitar o prosseguimento inútil de ações inviáveis.",
-      "Resposta correta. O Supremo Tribunal Federal fixou que o interrogatório deve ser realizado ao final da instrução em todos os procedimentos penais, inclusive na Lei de Drogas.",
-      "O laudo de constatação provisória continua sendo suficiente para a homologação do flagrante e recebimento da denúncia na Lei de Tóxicos.",
-      "A defesa prévia antecedente ao recebimento mantém-se no rito especial, mas adequa-se a ordem dos atos instrucionais posteriores."
-    ]
-  },
-  {
-    type: "multi",
-    q: "As causas de impedimento (arts. 252 e 253 do CPP) e de suspeição (art. 254 do CPP) objetivam assegurar a imparcialidade dos sujeitos processuais. Sobre a distinção doutrinária e legal entre esses institutos, assinale as assertivas corretas:",
-    options: [
-      "Tanto o impedimento quanto a suspeição visam afastar o sujeito parcial do processo para assegurar o devido processo legal e a imparcialidade do julgamento.",
-      "A suspeição baseia-se em motivos subjetivos ou de vínculo interpessoal (como amizade íntima ou inimizade capital), gerando presunção relativa de parcialidade.",
-      "As regras de impedimento e suspeição aplicam-se estritamente aos juízes de direito, sendo inalcançáveis aos membros do Ministério Público e peritos.",
-      "O impedimento fundamenta-se em causas objetivas que geram uma presunção absoluta de parcialidade do magistrado."
-    ],
-    correct: [0, 1, 3],
-    explanations: [
-      "Correta. Ambos os institutos protegem a imparcialidade do processo.",
-      "Correta. Suspeição: causas subjetivas e presunção relativa.",
-      "Incorreta. As regras se estendem a MP, peritos e outros sujeitos processuais.",
-      "Correta. Impedimento: causas objetivas e presunção absoluta."
-    ]
-  },
-  {
-    q: "O Código de Processo Penal prescreve formalidades específicas para a comunicação dos atos processuais a determinados réus em virtude da função ou condição pessoal que ostentam. Em relação à citação do militar e do funcionário público, assinale a opção correta:",
-    options: [
-      "A citação do funcionário público prescinde de citação pessoal, bastando a notificação ao chefe da repartição onde ele trabalha.",
-      "A citação do militar faz-se mediante simples notificação ao seu advogado constituído, dispensando-se a entrega de cópia da acusação.",
-      "A citação do militar é feita por meio de requisição à autoridade superior a cujo comando estiver subordinado, em consonância com o art. 358 do CPP.",
-      "O réu preso no mesmo estado deve ser citado obrigatoriamente por edital, comunicando-se a direção do presídio por simples carta simples."
+      "A decisão coordenada pode ser adotada por se tratar de matéria de relevante interesse público com participação de três ministérios.",
+      "A decisão coordenada é cabível, desde que haja a renúncia formal da competência originária de cada autoridade envolvida.",
+      "O instituto da decisão coordenada é expressamente vedado para processos administrativos relacionados ao poder sancionador.",
+      "O instrumento poderá ser utilizado apenas se a concessionária interessada integrar a mesa decisória com direito a voto antecedente à ata."
     ],
     correct: 2,
     explanations: [
-      "Não é bem isso. Notifica-se o chefe da repartição (art. 359), mas é indispensável a citação pessoal do funcionário público acusado.",
-      "A citação do militar exige formalidades próprias direcionadas ao réu e a requisição à autoridade superior para sua apresentação.",
-      "Resposta correta. O artigo 358 do CPP exige que a citação do militar ocorra mediante requisição ao chefe da unidade militar à qual se vincula.",
-      "Conforme a Súmula 351 do STF, o réu preso deve ser citado pessoalmente, sendo nula a citação por edital nessa hipótese."
+      "Não é bem isso. A presença de três órgãos e a relevância da matéria não superam as vedações expressas estabelecidas na legislação para a adoção da decisão coordenada.",
+      "A decisão coordenada não exclui nem transfere a responsabilidade originária de cada órgão ou autoridade participante.",
+      "Resposta correta. O texto legal proíbe formalmente a aplicação da decisão coordenada em processos licitatórios, naqueles sujeitos ao poder sancionador ou que envolvam autoridades de Poderes distintos.",
+      "Os interessados participam na condição de ouvintes, podendo obter direito a voz mediante deferimento, mas não integram o polo decisório."
     ]
   },
   {
-    q: "Nos termos do artigo 387, inciso IV, do CPP, o magistrado, ao proferir sentença penal condenatória, deve fixar o valor mínimo para reparação dos danos causados pela infração. Sob o ponto de vista da motivação e das garantias processuais do réu, qual requisito é indispensável para a validade dessa fixação na sentença?",
+    q: "Em 2018, um servidor público federal passou a receber, por ato administrativo eivado de vício de legalidade, o pagamento de uma vantagem pecuniária de trato sucessivo (efeitos patrimoniais contínuos). O servidor atuou de boa-fé. A Administração Pública iniciou formalmente a impugnação da validade desse ato em 2024, invocando o poder-dever de autotutela. Considerando as regras de decadência previstas no art. 54 da Lei nº 9.784/99, assinale a afirmativa correta.",
     options: [
-      "O magistrado pode fixar o valor de ofício no dispositivo sem necessidade de prévia discussão ou indicação na motivação.",
-      "Exige pedido expresso formulado pela acusação ou pelo ofendido e a garantia do contraditório e da ampla defesa durante a instrução probatória.",
-      "A fixação civil só é admitida nas sentenças absolutórias impróprias decorrentes de aplicação de medida de segurança.",
-      "É um efeito automático da sentença condenatória que prescinde de pedido expresso na denúncia e de contraditório durante a instrução."
+      "A má-fé do servidor é presumida pelo simples recebimento de valores indevidos por mais de três anos, afastando a decadência.",
+      "O prazo de decadência é de cinco anos e começou a contar da percepção do primeiro pagamento, consumando-se antes da medida de impugnação em 2024.",
+      "O prazo decadencial de cinco anos deve ser contado da data em que o ato foi editado, independentemente da data de percepção da primeira parcela.",
+      "A Administração tem o dever de anular o ato a qualquer tempo, pois vícios de legalidade em verbas de pessoal não se sujeitam a prazos decadenciais."
     ],
     correct: 1,
     explanations: [
-      "Não é bem isso. Decidir de ofício sobre reparação civil sem prévio contraditório gera surpresa e viola a ampla defesa e o devido processo legal.",
-      "Resposta correta. Para fixar o valor mínimo indenizatório na motivação da sentença condenatória, é imperativo o pedido formal e a oportunidade de defesa probatória.",
-      "A reparação civil ex delicto do art. 387, IV, aplica-se às sentenças penais condenatórias e não às decisões absolutórias.",
-      "A imposição de valor mínimo para reparação civil exige pedido formal na acusação e amplo contraditório durante o processo."
+      "Não é bem isso. A má-fé exige comprovação nos autos e não pode ser presumida para fins de afastamento da decadência administrativa.",
+      "Resposta correta. Em pagamentos de efeitos patrimoniais contínuos, o termo inicial do quinquênio decadencial é a percepção do primeiro pagamento, consumando a decadência em 2023 diante da ausência de impugnação anterior.",
+      "Para prestações de efeitos patrimoniais contínuos, a legislação estabelece regra específica atribuindo a contagem a partir da percepção do primeiro pagamento.",
+      "A autotutela administrativa em atos favoráveis aos destinatários encontra limite temporal na decadência quinquenal, salvo comprovada má-fé ou flagrante inconstitucionalidade."
     ]
   },
   {
-    type: "multi",
-    q: "No rito comum ordinário, o processamento da demanda obedece a uma sequência de atos demarcados por prazos e limites probatórios legais. Selecione as alternativas que apresentam dados procedimentais corretos desse rito:",
+    q: "Um servidor público punido em processo disciplinar com suspensão interpõe recurso administrativo à autoridade superior. Esta, ao reanalisar o caso, verifica a possibilidade de aplicar a pena de demissão. Paralelamente, outro servidor punido com demissão requer a revisão de seu processo disciplinar após dois anos, trazendo documentos inéditos que comprovam sua inocência. Sobre a incidência da reformatio in pejus nestes institutos, assinale a opção correta.",
     options: [
-      "O prazo para apresentação da Resposta à Acusação (art. 396-A) é de 10 dias a contar da citação válida do réu.",
-      "A ausência de apresentação da Resposta à Acusação por defensor constituído obriga a nomeação de defensor dativo ou encaminhamento à Defensoria Pública.",
-      "Cada parte poderá arrolar até no máximo 8 testemunhas por réu e por fato imputado na peça acusatória (art. 401 do CPP).",
-      "Se o réu citado pessoalmente não apresentar Resposta à Acusação no prazo legal, o juiz deve decretar a revelia e julgar antecipadamente a lide."
-    ],
-    correct: [0, 1, 2],
-    explanations: [
-      "Correta. Resposta à acusação: 10 dias após a citação.",
-      "Correta. Sem resposta, nomeia-se defensor dativo ou encaminha-se à Defensoria.",
-      "Correta. No ordinário: até 8 testemunhas por réu/fato.",
-      "Incorreta. Não há julgamento antecipado da lide no processo penal por falta de resposta; o processo segue com defensor."
-    ]
-  },
-  {
-    q: "Visando à preparação dos debates em Plenário do Tribunal do Júri, a defesa de um acusado de homicídio pretende juntar um laudo pericial aos autos para ser lido perante os jurados. De acordo com o art. 479 do Código de Processo Penal, qual o prazo mínimo e a forma de contagem para a juntada antecedente desse documento?",
-    options: [
-      "Juntada a qualquer momento antes do início dos debates orais no próprio dia do julgamento.",
-      "Juntada com antecedência mínima de 3 dias úteis, com a devida ciência da parte contrária dentro desse prazo.",
-      "Juntada com antecedência mínima de 24 horas corridas antes da abertura da sessão de julgamento.",
-      "Juntada no prazo de 5 dias corridos sem necessidade de intimação da acusação."
+      "O recurso administrativo não exige a prévia manifestação do recorrente para o agravamento da pena, diferentemente da revisão.",
+      "No recurso administrativo admite-se o agravamento da sanção se o recorrente for cientificado para alegações prévias; na revisão, é vedado o agravamento.",
+      "A revisão permite o agravamento da penalidade se surgirem fatos novos que demonstrem maior gravidade do ilícito.",
+      "A reformatio in pejus é vedada tanto no recurso administrativo quanto na revisão disciplinar por imperativo da ampla defesa."
     ],
     correct: 1,
     explanations: [
-      "Não é bem isso. A juntada surpresa no dia do julgamento é terminantemente proibida pelo art. 479 do CPP para evitar quebra do contraditório.",
-      "Resposta correta. O art. 479 exige antecedência mínima de 3 dias úteis para a juntada de documentos a serem lidos no Plenário, cientificando-se a outra parte.",
-      "O prazo legal é de 3 dias úteis e não de 24 horas, garantindo tempo hábil para a análise do documento pela parte contrária.",
-      "O dispositivo legal fixa o prazo de 3 dias úteis e exige expressamente a intimação/ciência da parte adversa."
+      "Não é bem isso. O parágrafo único do art. 64 condiciona expressamente eventual gravame no recurso à prévia cientificação do recorrente para manifestação.",
+      "Resposta correta. No recurso administrativo vigora a possibilidade de reformatio in pejus mediante prévia ciência do recorrente, ao passo que o parágrafo único do art. 65 proíbe expressamente o agravamento na revisão.",
+      "A revisão visa exclusivamente a sanar inadequações de sanção em favor do punido, sendo vedado qualquer agravamento da sanção original.",
+      "Diferentemente da revisão, o recurso administrativo admite o agravamento da situação do recorrente mediante atendimento de pressupostos procedimentais."
     ]
   },
   {
-    q: "Durante a votação dos quesitos em Plenário do Tribunal do Júri, os jurados responderam negativamente ao quesito relativo ao dolo do acusado (negando a intenção de matar e o dolo eventual), caracterizando uma desclassificação em plenário. De acordo com o regramento do CPP, qual a consequência processual imediata desse resultado?",
+    q: "O titular de um órgão administrativo federal pretende delegar competências ao chefe de uma divisão subordinada. O rol de matérias inclui: I) edição de regimento interno do órgão; II) decisão de recursos administrativos; e III) autorização de concessão de diárias e passagens. À luz do art. 13 da Lei nº 9.784/99, a delegação almejada é:",
     options: [
-      "O réu é sumariamente absolvido de todos os crimes imputados, haja vista que os jurados negaram a intenção criminosa.",
-      "O julgamento deve ser anulado e refeito perante um novo Conselho de Sentença sorteado na mesma semana.",
-      "Os autos devem ser remetidos a um juiz de uma vara criminal comum para proferir a sentença em nova data.",
-      "O Juiz Presidente do Tribunal do Júri assume a competência para julgar o crime residual e os eventuais crimes conexos, proferindo a sentença em seguida."
+      "Inviável, porquanto o instituto da delegação só é admitido entre órgãos sem relação de subordinação hierárquica.",
+      "Válida apenas quanto à autorização de concessão de diárias e passagens, sendo vedada para edição de atos normativos e decisão de recursos.",
+      "Totalmente válida, pois a relação de subordinação hierárquica autoriza a delegação de qualquer matéria administrativa.",
+      "Válida quanto à decisão de recursos administrativos e autorização de diárias, mas vedada para atos normativos."
+    ],
+    correct: 1,
+    explanations: [
+      "Não é bem isso. A delegação é plenamente cabível entre órgãos subordinados, além de ser admitida para órgãos não subordinados por razões técnicas ou territoriais.",
+      "Resposta correta. O art. 13 proíbe a delegação da edição de atos normativos, da decisão de recursos administrativos e das matérias de competência exclusiva.",
+      "A Lei nº 9.784/99 impõe limitações absolutas a determinados objetos de delegação, independentemente da existência de hierarquia.",
+      "A decisão de recursos administrativos figura no rol legal explícito das matérias indelegáveis."
+    ]
+  },
+  {
+    q: "Uma autoridade federal tomou conhecimento de uma irregularidade praticada por servidor público. A apuração inicial indicou que a infração é punível com a sanção de suspensão por 20 dias, existindo elementos de autoria e materialidade devidamente definidos. Considerando as normas da Lei nº 8.112/90 e os princípios do processo administrativo, qual procedimento deve ser adotado?",
+    options: [
+      "Instaurar sindicância punitiva ou PAD direto, garantindo contraditório e ampla defesa, já que a sanção de suspensão por 20 dias pode ser aplicada.",
+      "Instaurar sindicância sem direito a contraditório, pois a ampla defesa só se aplica em casos de demissão ou cassação de aposentadoria.",
+      "Aplicar a penalidade de suspensão de plano, dispensando qualquer procedimento formal por se tratar de punição de baixa gravidade.",
+      "Instaurar obrigatoriamente uma sindicância preparatória e inquisitória, pois o PAD não pode ser instaurado de forma direta."
+    ],
+    correct: 0,
+    explanations: [
+      "Isso mesmo! A sindicância da Lei nº 8.112/90 que comporta aplicação de pena de suspensão de até 30 dias deixa de ser mera apuração inquisitória e exige o contraditório e a ampla defesa.",
+      "Sindicâncias que resultem em penalidades de advertência ou suspensão exigem contraditório, conforme o comando constitucional aplicável aos litigantes e acusados.",
+      "A aplicação de qualquer sanção disciplinar exige procedimento formal garantidor do devido processo legal e da ampla defesa.",
+      "A sindicância é um procedimento dispensável quando a Administração já dispõe de elementos suficientes para a instauração direta do processo principal."
+    ]
+  },
+  {
+    q: "Um administrado foi notificado oficialmente da decisão de um processo administrativo federal no dia 15 de maio (quarta-feira). Sabendo que o prazo legal para a interposição de recurso administrativo é de 10 dias e que o prazo conta-se de modo contínuo, não havendo feriados no período, qual será o termo final do prazo recursal, considerando que o décimo dia incidiu em um sábado (dia 25 de maio)?",
+    options: [
+      "Sábado, dia 25 de maio, exaurindo-se o direito independentemente de haver expediente público.",
+      "Terça-feira, dia 28 de maio, pois a contagem inicia-se apenas no primeiro dia útil subsequente à intimação e computa somente dias úteis.",
+      "Segunda-feira, dia 27 de maio, em virtude da prorrogação do vencimento que incidiu em dia sem expediente normal.",
+      "Sexta-feira, dia 24 de maio, por exclusão do final de semana da contagem."
+    ],
+    correct: 2,
+    explanations: [
+      "Não é bem isso. Quando o dia do vencimento cai em final de semana ou dia sem expediente, a lei estipula expressamente a prorrogação para o dia útil subsequente.",
+      "Salvo disposição legal em contrário, os prazos na Lei nº 9.784/99 são contínuos e não em dias úteis.",
+      "Resposta correta. Exclui-se o dia do início e inclui-se o do vencimento; caindo o término em dia sem expediente (sábado), o prazo prorroga-se até o primeiro dia útil seguinte.",
+      "Prazos em dias na Lei nº 9.784/99 contam-se de forma contínua, não se excluindo sábados e domingos do meio da contagem."
+    ]
+  },
+  {
+    q: "Servidor público federal demitido ao término de Processo Administrativo Disciplinar (PAD) ajuíza ação judicial alegando duas matérias: (1) nulidade absoluta por ter realizado sua defesa pessoalmente, sem advogado constituído; e (2) pedido para que o juiz reaprecie as provas e substitua a sanção por conveniência e oportunidade. À luz da Súmula Vinculante 5 do STF e da Súmula 665 do STJ, como deve proceder o Poder Judiciário?",
+    options: [
+      "Reconhecer a validade da defesa pessoal do servidor e restringir o controle judicial ao exame da regularidade formal e legalidade do ato.",
+      "Substituir a pena de demissão por advertência com base no juízo de conveniência e oportunidade do próprio Judiciário.",
+      "Anular o PAD pelo vício formal da falta de advogado e reapreciar livremente o mérito da sanção aplicada.",
+      "Declarar a nulidade da pena de demissão por ferir o direito de representação profissional privativa da advocacia."
+    ],
+    correct: 0,
+    explanations: [
+      "Isso mesmo! A jurisprudência sumulada fixa a desnecessidade de advogado no PAD (SV 5) e limita o controle jurisdicional à legalidade e devido processo legal, vedando incursão no mérito (Súmula 665 STJ).",
+      "A incursão no mérito administrativo pelo Poder Judiciário é vedada, ressalvadas hipóteses de flagrante teratologia, ilegalidade ou manifesta desproporcionalidade.",
+      "A falta de defesa técnica por advogado no PAD não ofende a Constituição, consoante a Súmula Vinculante 5 do STF.",
+      "No processo administrativo disciplinar, a presença de advogado é uma faculdade do acusado, e não uma exigência de validade processual."
+    ]
+  },
+  {
+    q: "Um administrado teve seu pedido indeferido por ato de um diretor de agência reguladora e interpôs recurso administrativo. Ao receber o recurso, o órgão competente constatou a existência de outros interessados no processo cujos direitos poderiam ser afetados por eventual provimento do pedido. Nos termos da Lei nº 9.784/99, qual deve ser a conduta adotada e qual o prazo para manifestação desses interessados?",
+    options: [
+      "O órgão deve indeferir o recurso, pois a presença de terceiros afetados impede a via recursal administrativa.",
+      "O órgão deverá intimar os demais interessados para que apresentem suas alegações no prazo de 5 dias úteis.",
+      "Os demais interessados dispõem do prazo de 10 dias úteis, idêntico ao prazo de interposição do próprio recurso.",
+      "O recurso deve ser distribuído diretamente à autoridade superior sem ouvir os demais interessados para garantir a celeridade."
+    ],
+    correct: 1,
+    explanations: [
+      "Não é bem isso. A presença de terceiros não obsta a interposição do recurso, incumbindo à Administração promover a intimação para o exercício do contraditório.",
+      "Resposta correta. O art. 62 da Lei nº 9.784/99 exige a intimação dos demais interessados após a interposição do recurso para apresentarem alegações em 5 dias úteis.",
+      "O prazo recursal é de 10 dias corridos, contudo a norma específica do art. 62 estabelece o prazo de 5 dias úteis para a manifestação dos demais interessados intimados.",
+      "O contraditório impõe a oportunidade de manifestação aos demais interessados que possam sofrer reflexos da decisão recursal."
+    ]
+  },
+  {
+    q: "Um servidor público federal atuou no julgamento de um processo administrativo no qual figurava como interessado o seu cônjuge. O servidor tinha plena ciência dessa situação de parentesco, mas absteve-se de comunicar o fato à autoridade superior e proferiu decisão de mérito. Qual a consequência jurídica dessa omissão deliberada, segundo a Lei nº 9.784/99?",
+    options: [
+      "Mera irregularidade sem efeitos disciplinares, restando precluso o direito de impugnação da parte adversa.",
+      "Conversão da hipótese de impedimento em suspeição de natureza relativa.",
+      "Convalidação automática da decisão se o ato beneficiou o interesse público primário.",
+      "Configuração de falta grave para efeitos disciplinares, sem prejuízo da invalidade do ato praticado por vício de impedimento."
     ],
     correct: 3,
     explanations: [
-      "Não é bem isso. Afastar o dolo do homicídio não equivale a absolver o réu, pois ele subsiste respondendo pelo crime residual (ex.: lesão corporal ou homicídio culposo).",
-      "A votação do quesito pela desclassificação é um veredicto hígido que apenas desloca o poder de sentença para o Juiz Presidente.",
-      "A desclassificação em plenário transfere imediatamente a competência decisória ao Juiz Presidente da sessão do Júri.",
-      "Resposta correta. Quando os jurados afastam a competência do Júri em plenário, cabe ao Juiz Presidente julgar o crime desclassificado e os conexos."
+      "Não é bem isso. A omissão do dever de comunicar o impedimento não é vista como mera irregularidade irrelevante pela legislação processual.",
+      "O parentesco em linha reta ou colateral com cônjuge enquadra-se estritamente nas hipóteses absolutas de impedimento, não se convertendo em suspeição.",
+      "Decisões proferidas por autoridade impedida contêm vício insanável de imparcialidade e não se convalidam por mera conveniência.",
+      "Resposta correta. O art. 19 estabelece expressamente que a omissão do dever de comunicar o impedimento constitui falta grave para efeitos disciplinares."
+    ]
+  },
+  {
+    q: "Em um procedimento administrativo federal de regulação ambiental, a norma aplicável exige a oitiva prévia e obrigatória de um parecer emitido por um órgão consultivo especializado, classificando-o como parecer obrigatório e vinculante. O órgão consultivo não emite o parecer no prazo máximo legal de 15 dias. Qual o desdobramento processual determinado pelo art. 42 da Lei nº 9.784/99?",
+    options: [
+      "A omissão do órgão consultivo gera a aprovação tácita do pedido formulado pelo administrado.",
+      "A competência decisória transfere-se automaticamente para o órgão consultivo que deixou de emitir o laudo.",
+      "O processo poderá ter prosseguimento regular e ser decidido com a dispensa formal do parecer.",
+      "O processo não terá seguimento até a respectiva apresentação do parecer, responsabilizando-se quem der causa ao atraso."
+    ],
+    correct: 3,
+    explanations: [
+      "Não é bem isso. Não há previsão de deferimento tácito de pedidos em razão do descumprimento de prazos para consulta vinculante.",
+      "A inércia do órgão consultivo não altera as regras de competência decisória da autoridade principal.",
+      "A dispensa de parecer omitido e a continuidade do processo aplicam-se exclusivamente quando o parecer for obrigatório e não vinculante.",
+      "Resposta correta. Por se tratar de parecer obrigatório e vinculante, o § 1º do art. 42 proíbe o prosseguimento do processo sem a sua juntada, prevendo a responsabilização da chefia omissa."
+    ]
+  },
+  {
+    q: "Determinada Agência Reguladora abriu um período de consulta pública por edital escrito para recolher sugestões sobre nova regulamentação tarifária. Um usuário do serviço protocolou alegações técnicas durante o prazo. Com base no art. 31 da Lei nº 9.784/99, qual é a condição jurídica adquirida por esse usuário no processo?",
+    options: [
+      "Não adquire a condição de interessado no processo, mas passa a ter o direito de obter da Administração uma resposta fundamentada.",
+      "Converte-se em parte interessada principal do processo administrativo, com direito a interpor recurso contra a decisão final.",
+      "Passa a integrar a comissão de instrução com direito a voto deliberativo na sessão de encerramento.",
+      "Perde o direito de obter certidões ou informações posteriores por ter exaurido sua participação no procedimento de consulta."
+    ],
+    correct: 0,
+    explanations: [
+      "Isso mesmo! Conforme o art. 31, § 2º, a participação na consulta pública não confere a condição de interessado, porém assegura o direito a uma resposta motivada, que pode ser comum a alegações idênticas.",
+      "O simples comparecimento à consulta pública não outorga a condição jurídica de legitimado interessado do processo principal.",
+      "A instrução e a deliberação permanecem no âmbito das autoridades e agentes competentes, não havendo ingresso de terceiros nos quadros decisórios.",
+      "O direito de petição e obtenção de certidões é assegurado constitucionalmente e não é suprimido pela intervenção em consulta pública."
+    ]
+  },
+  {
+    q: "Em um Estado da Federação que não possui legislação local específica sobre o prazo para revisão e anulação dos atos administrativos, a Administração Estadual busca anular de ofício um benefício concedido a um cidadão de boa-fé há seis anos. Diante dessa omissão legislativa estadual, qual o posicionamento pacificado pelo Superior Tribunal de Justiça (Súmula 633)?",
+    options: [
+      "A Lei nº 9.784/99 não pode ser aplicada por violação do pacto federativo, inexistindo prazo decadencial na esfera estadual.",
+      "O prazo decadencial em âmbito estadual é imprescritível por se tratar de exercício do poder de autotutela indisponível.",
+      "A anulação é válida mediante autorização expressa do Tribunal de Contas local, afastando a decadência.",
+      "A Lei nº 9.784/99 aplica-se subsidiariamente aos Estados se inexistente norma local, estando consumada a decadência quinquenal do direito de anular."
+    ],
+    correct: 3,
+    explanations: [
+      "Não é bem isso. O STJ firmou jurisprudência autorizando a aplicação subsidiária do diploma federal diante de lacuna da legislação local.",
+      "A autotutela em favor do administrado de boa-fé se sujeita à limitação temporal para preservação da segurança jurídica.",
+      "A atuação do controle externo não supre nem afasta a decadência administrativa operada contra a própria Administração.",
+      "Resposta correta. A Súmula 633 do STJ estabelece a incidência subsidiária do prazo decadencial quinquenal do art. 54 da Lei nº 9.784/99 a estados e municípios que careçam de lei específica."
+    ]
+  },
+  {
+    q: "Um administrado requereu o licenciamento para a realização de um evento privado em área pública. No curso da instrução, apresentou desistência por escrito do pedido. Entretanto, o órgão competente verificou que o evento planejado geraria grande impacto ambiental e sanitário prévio, exigindo a adoção de fiscalização ex officio. Como a Administração deve atuar perante a desistência apresentada?",
+    options: [
+      "Deve impor multa processual ao interessado por abandono de causa no processo administrativo.",
+      "Necessita de autorização judicial para dar prosseguimento ao feito administrativo após o pedido de desistência.",
+      "Poderá prosseguir com o processo administrativo se considerar que o interesse público assim o exige, a despeito da desistência do interessado.",
+      "É obrigada a arquivar o processo imediatamente, visto que o pedido inicial formulado pelo particular condiciona a atuação estatal."
+    ],
+    correct: 2,
+    explanations: [
+      "Não é bem isso. A desistência é um direito legalmente franqueado ao interessado e sua manifestação não constitui ato ilícito sancionável.",
+      "A Administração atua no exercício da oficialidade e de suas atribuições próprias, sem dependência de autorização do Poder Judiciário.",
+      "Resposta correta. O art. 51, § 2º, estabelece que a desistência do interessado não impede o prosseguimento do processo se o interesse público recomendar a manifestação formal da Administração.",
+      "O princípio da oficialidade permite a continuidade do processo instaurado a pedido da parte quando a matéria exigir apuração no interesse público."
+    ]
+  },
+  {
+    q: "Em um Processo Administrativo Disciplinar (PAD), a comissão processante utilizou cópia das transcrições de interceptações telefônicas colhidas em inquérito policial e autorizadas pelo juízo criminal competente. O servidor alega a inadmissibilidade absoluta do uso dessas provas. Conforme a Súmula 591 do STJ e o direito probatório administrativo, a alegação do servidor é:",
+    options: [
+      "Improcedente, sendo a prova emprestada válida inclusive se derivada de procedimento criminal anulado por ilicitude probatória.",
+      "Procedente, pois o processo disciplinar veda integralmente qualquer utilização de elementos colhidos na esfera criminal.",
+      "Improcedente, sendo permitida a prova emprestada no PAD desde que autorizada pelo juízo competente e respeitados contraditório e ampla defesa.",
+      "Procedente, visto que dados telefônicos não podem ser revelados perante comissões disciplinares administrativas em nenhuma hipótese."
+    ],
+    correct: 2,
+    explanations: [
+      "Não é bem isso. O art. 30 proíbe provas obtidas por meios ilícitos, o que se estende às provas derivadas ilícitas (frutos da árvore envenenada).",
+      "A jurisprudência admite o intercâmbio de provas entre as esferas penal e administrativa para busca da verdade real.",
+      "Resposta correta. A Súmula 591 do STJ autoriza a prova emprestada no PAD quando obtida com chancela judicial e submetida ao contraditório no processo administrativo.",
+      "A autorização do juízo criminal competente afasta a ilicitude do compartilhamento dos dados da interceptação telefônica."
+    ]
+  },
+  {
+    q: "Ao proferir a decisão final em um Processo Administrativo Disciplinar, a autoridade julgadora acolheu integralmente as conclusões e a motivação fático-jurídica expendida no relatório final elaborado pela comissão processante, remetendo a este os fundamentos de sua decisão. O servidor alega que o ato punitivo é nulo por falta de motivação própria. Diante da Lei nº 9.784/99 e da Súmula 674 do STJ, a alegação de nulidade é:",
+    options: [
+      "Improcedente, pois é admitida a fundamentação per relationem no processo disciplinar, incorporando-se os pareceres e relatórios ao ato.",
+      "Procedente, porquanto a remissão a pareceres anteriores só é aceita em atos discricionários não sancionatórios.",
+      "Improcedente, cabendo o refazimento do ato apenas se a comissão processante houver dissentido da sanção imposta.",
+      "Procedente, pois a autoridade julgadora deve redigir texto inédito sob pena de omissão formal insuperável."
+    ],
+    correct: 0,
+    explanations: [
+      "Isso mesmo! A Súmula 674 do STJ e o art. 50, § 1º, da Lei nº 9.784/99 chancelam a fundamentação per relationem, tornando o relatório parte integrante da decisão.",
+      "A aplicação da fundamentação aliada a pareceres formais estende-se expressamente ao processo administrativo disciplinar.",
+      "A fundamentação per relationem subsiste quando a autoridade concorda com o relatório, não sendo hipótese de refazimento por vício formal.",
+      "A motivação mediante declaração de concordância com fundamentos de relatórios e pareceres prévios é técnica reconhecida pelo ordenamento."
     ]
   },
   {
     type: "multi",
-    q: "O Princípio da Correlação (ou da Congruência) estabelece que a sentença deve guardar estrita fidelidade com os fatos imputados na peça acusatória. Considerando as implicações desse princípio no processo penal, analise as afirmações abaixo:",
+    q: "De acordo com o art. 50 da Lei nº 9.784/99, a indicação dos fatos e dos fundamentos jurídicos (motivação) é obrigatória na prática de determinados atos administrativos. Selecione as hipóteses em que a motivação explícita é uma exigência legal:",
     options: [
-      "Predomina o brocardo narra mihi factum, dabo tibi ius, significando que o réu se defende dos fatos narrados e não da capitulação jurídica atribuída pela acusação.",
-      "O princípio da correlação obriga o juiz a condenar o réu exatamente à pena requerida pelo Ministério Público, sem poder aplicar sanção superior.",
-      "É expressão direta do princípio acusatório e da imparcialidade do juiz, impedindo que o magistrado condene por fatos que não foram objeto de acusação e contraditório.",
-      "O descumprimento da correlação, como na condenação por fato completamente alheio ao processo sem o devido aditamento, acarreta a nulidade da sentença."
+      "Atos que neguem, limitem ou afetem direitos ou interesses dos administrados.",
+      "Exoneração de ocupante de cargo em comissão de livre nomeação e exoneração (ad nutum).",
+      "Decisões proferidas em sede de recursos administrativos e atos decorrentes de reexame de ofício.",
+      "Atos que importem anulação, revogação, suspensão ou convalidação de ato administrativo.",
+      "Atos que imponham ou agravem deveres, encargos ou sanções."
+    ],
+    correct: [0, 2, 3, 4],
+    explanations: [
+      "Correta. Atos que afetem direitos ou interesses exigem motivação (art. 50).",
+      "Incorreta. A exoneração ad nutum de cargo em comissão, em regra, dispensa motivação específica.",
+      "Correta. Decisões em recursos e reexame de ofício exigem motivação.",
+      "Correta. Anulação, revogação, suspensão e convalidação exigem motivação.",
+      "Correta. Atos que imponham ou agravem deveres, encargos ou sanções exigem motivação."
+    ]
+  },
+  {
+    type: "multi",
+    q: "O instituto da decisão coordenada (arts. 49-A a 49-G da Lei nº 9.784/99) foi concebido para conferir celeridade ao processo decisório interinstitucional. Contudo, a lei vedou sua aplicação em hipóteses específicas. Marque as opções que representam vedações legais ao uso da decisão coordenada:",
+    options: [
+      "Processos administrativos voltados à realização de licitações.",
+      "Processos em que estejam envolvidas autoridades vinculadas a Poderes distintos da República.",
+      "Processos administrativos relacionados ao exercício do poder sancionador da Administração.",
+      "Processos de delegação interna de competência funcional entre órgãos da Administração federal direta."
+    ],
+    correct: [0, 1, 2],
+    explanations: [
+      "Correta. Licitações são hipótese de vedação à decisão coordenada.",
+      "Correta. Autoridades de Poderes distintos não podem integrar decisão coordenada.",
+      "Correta. Poder sancionador é vedação expressa à decisão coordenada.",
+      "Incorreta. Delegação interna de competência não está no rol de vedações da decisão coordenada."
+    ]
+  },
+  {
+    type: "multi",
+    q: "A legitimidade para a interposição de recursos administrativos na esfera federal é disciplinada pelo art. 58 da Lei nº 9.784/99. Selecione os sujeitos que detêm essa legitimidade nos termos da norma:",
+    options: [
+      "Quaisquer autoridades administrativas terceiras sem vínculo com a lide que divirjam quanto ao mérito da decisão.",
+      "Organizações e associações representativas no tocante à defesa de direitos e interesses coletivos.",
+      "Pessoas cujos direitos ou interesses sejam indiretamente afetados pela decisão proferida, ainda que não tenham sido partes originárias.",
+      "Cidadãos ou associações na tutela de direitos ou interesses difusos.",
+      "Os titulares de direitos e interesses que participaram como parte no processo originário."
+    ],
+    correct: [1, 2, 3, 4],
+    explanations: [
+      "Incorreta. Autoridades sem vínculo com a lide não têm legitimidade recursal genérica.",
+      "Correta. Associações representativas na defesa de interesses coletivos têm legitimidade.",
+      "Correta. Quem é indiretamente afetado também pode recorrer.",
+      "Correta. Cidadãos e associações na tutela de interesses difusos têm legitimidade.",
+      "Correta. As partes originárias do processo têm legitimidade recursal."
+    ]
+  },
+  {
+    type: "multi",
+    q: "O art. 69-A da Lei nº 9.784/99 estabelece prioridade na tramitação dos procedimentos administrativos perante órgãos e instâncias federais. Selecione os casos em que é assegurada a tramitação prioritária, mediante requerimento e prova da condição:",
+    options: [
+      "Pessoa física com idade igual ou superior a 60 (sessenta) anos.",
+      "Servidores públicos estatutários ativos inscritos em programas estaduais de mestrado.",
+      "Pessoa portadora de enfermidades graves expressamente listadas em lei, tais como neoplasia maligna, tuberculose ativa ou doença de Parkinson.",
+      "Pessoa com deficiência, física ou mental."
     ],
     correct: [0, 2, 3],
     explanations: [
-      "Correta. O réu se defende dos fatos, não da tipificação jurídica (narra mihi factum, dabo tibi ius).",
-      "Incorreta. A correlação não prende o juiz ao quantum de pena pedido pelo MP; a dosimetria segue a lei.",
-      "Correta. Correlação decorre do acusatório e da imparcialidade: não se condena por fato não imputado.",
-      "Correta. Condenar por fato estranho à acusação, sem aditamento, nulifica a sentença."
+      "Correta. Idosos com 60 anos ou mais têm prioridade na tramitação.",
+      "Incorreta. Não há prioridade genérica para servidores em mestrado estadual.",
+      "Correta. Enfermidades graves listadas em lei garantem prioridade.",
+      "Correta. Pessoa com deficiência tem prioridade na tramitação."
+    ]
+  },
+  {
+    type: "multi",
+    q: "Anulação e revogação são formas de desconstituição dos atos administrativos fundadas no dever-poder de autotutela (art. 53 da Lei nº 9.784/99). Assinale as opções que diferenciam e caracterizam corretamente estes dois institutos:",
+    options: [
+      "A revogação dos atos administrativos deve obrigatoriamente respeitar os direitos adquiridos.",
+      "A revogação incide sobre atos válidos e fundamenta-se em juízo de conveniência e oportunidade, representando faculdade discricionária.",
+      "A anulação recai obrigatoriamente sobre atos eivados de vício de legalidade, constituindo um dever para a Administração.",
+      "A anulação de atos favoráveis de boa-fé pode ser realizada a qualquer tempo, sem sujeição a prazo decadencial."
+    ],
+    correct: [0, 1, 2],
+    explanations: [
+      "Correta. A revogação respeita direitos adquiridos.",
+      "Correta. Revogação atinge atos válidos por conveniência e oportunidade.",
+      "Correta. Anulação é dever diante de ilegalidade.",
+      "Incorreta. Anulação de atos favoráveis de boa-fé sujeita-se ao prazo decadencial quinquenal (art. 54)."
+    ]
+  },
+  {
+    type: "multi",
+    q: "O devido processo legal administrativo é regido por princípios fundamentais estruturantes. Selecione as assertivas que retratam corretamente as regras e aplicações desses princípios no âmbito do processo administrativo:",
+    options: [
+      "O princípio da oficialidade permite que a Administração instaure e impulsione o processo de ofício, sem depender de provocação constante do interessado.",
+      "O princípio do informalismo procedimental dispensa o rigor formal excessivo quando não houver exigência expressa em lei, adotando-se formas simples.",
+      "O princípio da verdade material autoriza o administrador a buscar a verdade real, mediante inspeções e diligências probatórias próprias.",
+      "A busca da verdade material autoriza a utilização probatória de elementos obtidos por meios ilícitos para comprovar faltas disciplinares graves."
+    ],
+    correct: [0, 1, 2],
+    explanations: [
+      "Correta. Oficialidade: impulso oficial do processo.",
+      "Correta. Informalismo: formas simples quando a lei não exige formalidade.",
+      "Correta. Verdade material: busca ativa da verdade real.",
+      "Incorreta. Provas ilícitas são inadmissíveis, ainda que em busca da verdade material."
+    ]
+  },
+  {
+    type: "multi",
+    q: "A convalidação (art. 55 da Lei nº 9.784/99) permite o aproveitamento de atos administrativos que apresentem vícios sanáveis. Marque os requisitos obrigatórios estabelecidos em lei para que a Administração possa convalidar um ato:",
+    options: [
+      "O ato convalidado deve necessariamente passar por prévia homologação do Poder Judiciário.",
+      "A convalidação não deve acarretar lesão ao interesse público.",
+      "A convalidação não pode causar prejuízos a terceiros.",
+      "O defeito apresentado no ato deve ser de natureza sanável."
+    ],
+    correct: [1, 2, 3],
+    explanations: [
+      "Incorreta. Não se exige homologação judicial para convalidação administrativa.",
+      "Correta. Não pode haver lesão ao interesse público.",
+      "Correta. Não pode prejudicar terceiros.",
+      "Correta. O vício deve ser sanável."
+    ]
+  },
+  {
+    type: "multi",
+    q: "À luz da Súmula 611 do STJ e das disposições da Lei nº 8.112/90, assinale as assertivas corretas referentes ao processamento de denúncias no âmbito disciplinar federal:",
+    options: [
+      "É permitida a instauração de PAD com base em denúncia anônima, desde que devidamente motivada e amparada em prévia investigação ou sindicância.",
+      "A denúncia anônima autoriza a comissão a aplicar a sanção de demissão de plano sem necessidade de contraditório.",
+      "O poder-dever de autotutela impõe à Administração a obrigação de apurar irregularidades das quais tome conhecimento, mesmo por denúncia apócrifa.",
+      "As denúncias sobre irregularidades no serviço público devem ser formuladas por escrito, contendo a identificação e o endereço do denunciante."
+    ],
+    correct: [0, 2, 3],
+    explanations: [
+      "Correta. PAD com base em denúncia anônima é possível se motivado e precedido de investigação.",
+      "Incorreta. Denúncia anônima não autoriza sanção de plano sem contraditório.",
+      "Correta. Autotutela exige apuração mesmo diante de denúncia apócrifa.",
+      "Correta. Em regra, denúncias devem ser escritas e identificadas (sem prejuízo da apuração de fato conhecido por outro meio)."
+    ]
+  },
+  {
+    type: "multi",
+    q: "Os artigos 3º e 4º da Lei nº 9.784/99 estabelecem os direitos e deveres do administrado perante a Administração Pública federal. Selecione os itens que correspondem a DEVERES expressos do administrado:",
+    options: [
+      "Fazer-se obrigatoriamente acompanhar de procurador legalmente habilitado em todas as manifestações escritas.",
+      "Prestar as informações solicitadas e colaborar para o esclarecimento dos fatos.",
+      "Expor os fatos conforme a verdade.",
+      "Não agir de modo temerário no processo.",
+      "Proceder com lealdade, urbanidade e boa-fé."
+    ],
+    correct: [1, 2, 3, 4],
+    explanations: [
+      "Incorreta. Não há dever de se fazer acompanhar de procurador em todas as manifestações.",
+      "Correta. Prestar informações e colaborar é dever do administrado.",
+      "Correta. Expor os fatos conforme a verdade é dever.",
+      "Correta. Não agir de modo temerário é dever.",
+      "Correta. Lealdade, urbanidade e boa-fé são deveres do administrado."
+    ]
+  },
+  {
+    type: "multi",
+    q: "Os processos administrativos dividem-se em litigiosos e não litigiosos. Selecione as assertivas que retratam adequadamente a natureza e as regras operacionais dessas categorias:",
+    options: [
+      "A sindicância puramente preparatória é inquisitória, prescindindo em regra de contraditório por constituir apuração preliminar.",
+      "Nos processos litigiosos exige-se estrita e rígida observância dos princípios do contraditório e da ampla defesa por envolverem conflitos ou sanções.",
+      "Decisões proferidas em processos administrativos litigiosos adquirem autoridade de coisa julgada material, impedindo revisão judicial.",
+      "Os processos não litigiosos destinam-se ao exercício rotineiro da função administrativa (outorgas, certificações) sem litígio instalado."
+    ],
+    correct: [0, 1, 3],
+    explanations: [
+      "Correta. Sindicância preparatória é inquisitória e em regra dispensa contraditório.",
+      "Correta. Processos litigiosos exigem contraditório e ampla defesa.",
+      "Incorreta. Decisões administrativas não fazem coisa julgada material que impeça o controle judicial.",
+      "Correta. Processos não litigiosos são de rotina administrativa sem conflito."
+    ]
+  },
+  {
+    type: "multi",
+    q: "O artigo 63 da Lei nº 9.784/99 estabelece hipóteses em que o recurso administrativo não será conhecido. Escolha as situações que caracterizam o NÃO CONHECIMENTO e os desdobramentos previstos nesse dispositivo:",
+    options: [
+      "O não conhecimento do recurso não impede a Administração de rever de ofício o ato ilegal, desde que não ocorrida a preclusão administrativa.",
+      "Recurso interposto fora do prazo legal (intempestivo).",
+      "Recurso interposto perante órgão incompetente.",
+      "Na hipótese de interposição perante órgão incompetente, será indicada ao recorrente a autoridade competente, sendo-lhe devolvido o prazo.",
+      "O não conhecimento do recurso gera a imediata extinção do processo com julgamento de mérito favorável à Administração."
+    ],
+    correct: [0, 1, 2, 3],
+    explanations: [
+      "Correta. O não conhecimento não impede a revisão de ofício do ato ilegal (se ainda possível).",
+      "Correta. Recurso intempestivo não é conhecido.",
+      "Correta. Recurso perante órgão incompetente não é conhecido.",
+      "Correta. Em caso de incompetência, indica-se a autoridade e devolve-se o prazo.",
+      "Incorreta. O não conhecimento não equivale a julgamento de mérito favorável à Administração."
     ]
   }
 ];
